@@ -50,16 +50,16 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * [[Compiler Options]]
 
-* __Target Machines__
-** __6502__
-*** __Atari Lynx__
-*** __Nintendo Entertainment System__
+* Target Machines
+** 6502
+*** Atari Lynx
+*** Nintendo Entertainment System__
 **** [[NES Programming FAQ and Important Pointers]]
 ***** [[NES Programming FAQ and Important Pointers|Introduction]]
 ***** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
 ***** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
 ***** [[NES Programming FAQ and Important Pointers|Scrolling]]
-**** __NES Code Library__
+**** NES Code Library
 ***** [[lib_ram.as]]
 ***** [[nes.h]] (Standard NES Functions, Macros and Defines)
 ****** [[nes_audio.h]]
@@ -67,22 +67,22 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ****** [[nes_mappers.h]]
 ****** [[nes_system.h]]
 ****** [[nes_video.h]]
-*** __Apple II__
-** __Sharp LR35902 Z80__
-*** __Nintendo Game Boy__
-** __Zilog Z80__
-*** __Sega Master System__
-*** __Sega Game Gear__
-** __Motorola 68000__
-*** __Sega Genesis__
-*** __Sega Nomad__
-*** __Neo Geo AES__
-** __ARM7TDMI__
-*** __Nintendo Game Boy Advance__
+*** Apple II
+** Sharp LR35902 Z80
+*** Nintendo Game Boy
+** Zilog Z80
+*** Sega Master System
+*** Sega Game Gear
+** Motorola 68000
+*** Sega Genesis
+*** Sega Nomad
+*** Neo Geo AES
+** ARM7TDMI
+*** Nintendo Game Boy Advance
 
 
-* __Target Code Libraries__
-** __6502__
+* Target Code Libraries
+** 6502
 *** [[std.h]]
 **** [[std_assignment.h]]
 **** [[std_bitwise.h]]
@@ -95,7 +95,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[std_memory.h]]
 **** [[std_palette.as]]
 **** [[std_stack.h]]
-** __Sharp LR35902 Z80__
-** __Zilog Z80__
-** __Motorola 68000__
-** __ARM7TDMI__
+** Sharp LR35902 Z80
+** Zilog Z80
+** Motorola 68000
+** ARM7TDMI
