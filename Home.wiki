@@ -5,12 +5,16 @@ Last Updated: **June 7, 2010**
 ==Introduction==
 HLAKit is a new compiler for a language based on NESHLA (NES High Level Assembler) by Brian Provinciano.  The old NESHLA compiler is targeted only at the NES system and has lots of NES-specific features in both the language and the standard library.  HLAKit aims to be a compiler for a more general HLA language targeted at as many old video game consoles and computers as possible.
 
-The HLAKit compiler is implemented in Python and uses the pyparsing module to handle all of the language parsing.  The goal is to structure the compiler in such a way that all platform/CPU specific pieces of the language are modular and swappable.
+The HLAKit compiler is implemented in Python and uses the pyparsing module to handle all of the language parsing.  The goal is to structure the compiler in such a way that all platform/CPU specific pieces of the language are modular and swappable.  Currently, the list of platform and/or CPU specific parts includes: assembly opcodes, register names, if/while test values, and preprocessor directives.  These will be explained in more detail later on.
 
 Why do this?  An HLA language gives a nice balance between structured programming (like C) and assembly language.  It allows one to program using functions, structs, named variable, if-else blocks and while loops while still preserving low-level control over the machine.  Unlike C, the HLA understood by the HLAKit compiler uses assembly for the body of functions.  When you are coding for old, 8-bit and 16-bit computers, assembly language is the only way to be sure you are getting the most out of the machine.
 
 ==Contents==
 
+* [[FAQ]]
+* [[Target Machines]]
+** [[Atari Lynx]]
+** [[Nintendo Entertainment System]]
 * [[NES Programming FAQ and Important Pointers]]
 ** [[NES Programming FAQ and Important Pointers|Introduction]]
 ** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
