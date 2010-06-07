@@ -1,5 +1,4 @@
 =HLAKit Programming Manual=
-
 By **David Huseby**\\
 Last Updated: **June 7, 2010**
 
