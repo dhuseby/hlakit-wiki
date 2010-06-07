@@ -16,11 +16,11 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Atari Lynx]]
 ** More coming...
 ** [[Nintendo Entertainment System]]
-* [[NES Programming FAQ and Important Pointers]]
-** [[NES Programming FAQ and Important Pointers|Introduction]]
-** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
-** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
-** [[NES Programming FAQ and Important Pointers|Scrolling]]
+*** [[NES Programming FAQ and Important Pointers]]
+**** [[NES Programming FAQ and Important Pointers|Introduction]]
+**** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
+**** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
+**** [[NES Programming FAQ and Important Pointers|Scrolling]]
 
 * [[Preprocessor Keywords]]
 ** [[Preprocessor Keywords#Defines|Defines]]
