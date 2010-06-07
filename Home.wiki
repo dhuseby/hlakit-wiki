@@ -59,7 +59,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 **** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
 **** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
 **** [[NES Programming FAQ and Important Pointers|Scrolling]]
-*** [[NESHLA_Programming_Manual|NESHLA Code Library]]
+*** **NES Code Library**
 **** [[lib_ram.as]]
 **** [[std.h]] (Standard 6502 Functions, Macros and Defines)
 ***** [[std_assignment.h]]
