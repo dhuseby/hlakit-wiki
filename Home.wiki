@@ -50,11 +50,11 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * [[Compiler Options]]
 
-* [[Target Machines]]
+* __Target Machines__
 ** __6502__
-*** [[Atari Lynx]]
+*** __Atari Lynx__
 **** More coming...
-*** [[Nintendo Entertainment System]]
+*** __Nintendo Entertainment System__
 **** [[NES Programming FAQ and Important Pointers]]
 ***** [[NES Programming FAQ and Important Pointers|Introduction]]
 ***** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
@@ -62,18 +62,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[NES Programming FAQ and Important Pointers|Scrolling]]
 **** __NES Code Library__
 ***** [[lib_ram.as]]
-***** [[std.h]] (Standard 6502 Functions, Macros and Defines)
-****** [[std_assignment.h]]
-****** [[std_bitwise.h]]
-****** [[std_boolean.h]]
-****** [[std_init.as]]
-****** [[std_jumps.as]]
-****** [[std_math.as]]
-******* [[std_math.h]]
-****** [[std_memory.as]]
-******* [[std_memory.h]]
-****** [[std_palette.as]]
-****** [[std_stack.h]]
 ***** [[nes.h]] (Standard NES Functions, Macros and Defines)
 ****** [[nes_audio.h]]
 ****** [[nes_io.h]]
@@ -81,6 +69,17 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ****** [[nes_system.h]]
 ****** [[nes_video.h]]
 
-
-
-
+* __Target Code Libraries__
+** __6502__
+*** [[std.h]] (Standard 6502 Functions, Macros and Defines)
+**** [[std_assignment.h]]
+**** [[std_bitwise.h]]
+**** [[std_boolean.h]]
+**** [[std_init.as]]
+**** [[std_jumps.as]]
+**** [[std_math.as]]
+***** [[std_math.h]]
+**** [[std_memory.as]]
+***** [[std_memory.h]]
+**** [[std_palette.as]]
+**** [[std_stack.h]]
