@@ -23,6 +23,9 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Preprocessor iNES Header|iNES Header]]
 
 * [[Variable Declaration and Use]]
+** [[Variable Declaration and Use|Types]]
+** [[Variable Declaration and Use|Declarations]]
+** [[Variable Declaration and Use|Manipulators]]
 
 * [[Function Declaration and Use]]
 ** [[Function Declaration and Use|Introduction]]
