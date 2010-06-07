@@ -10,6 +10,8 @@ The HLAKit compiler is implemented in Python and uses the pyparsing module to ha
 
 Why do this?  An HLA language gives a nice balance between structured programming (like C) and assembly language.  It allows one to program using functions, structs, named variable, if-else blocks and while loops while still preserving low-level control over the machine.  Unlike C, the HLA understood by the HLAKit compiler uses assembly for the body of functions.  When you are coding for old, 8-bit and 16-bit computers, assembly language is the only way to be sure you are getting the most out of the machine.
 
+==Contents==
+
 * [[NES Programming FAQ and Important Pointers]]
 ** [[NES Programming FAQ and Important Pointers|Introduction]]
 ** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
