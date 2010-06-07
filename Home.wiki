@@ -14,13 +14,13 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 * [[FAQ]]
 
 * [[Preprocessor Keywords]]
-** [[Preprocessor Keywords#Defines|Defines]]
-** [[Preprocessor Keywords|Messages]]
-** [[Preprocessor Keywords|Files]]
-** [[Preprocessor Keywords|ROM and RAM Banks and Blocks]]
-** [[Preprocessor Keywords|Padding]]
-** [[Preprocessor Keywords|Interrupt Vectors]]
-** [[Preprocessor Keywords|iNES Header]]
+** [[Preprocessor Defines|Defines]]
+** [[Preprocessor Messages|Messages]]
+** [[Preprocessor Files|Files]]
+** [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM Banks and Blocks]]
+** [[Preprocessor Padding|Padding]]
+** [[Preprocessor Interrupt Vectors|Interrupt Vectors]]
+** [[Preprocessor iNES Header|iNES Header]]
 
 * [[Variable Declaration and Use]]
 
