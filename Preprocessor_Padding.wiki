@@ -1,0 +1,49 @@
+=Padding and Alignment=
+
+ROMs are manufactured in even binary sizes such as 1KByte, 2KByte, 4KByte, 8KByte, 16KByte, 32KByte, and so forth. Being the case, ROMs will never be odd sizes, such as 1234 bytes. If the file was 1234 bytes, it would be padded up to the nearest solid ROM size, which would be 2KByte.
+
+Normally padding is done with the 0xFF character, and sometimes with the 0x00 character. However, the padding directives allows you use use any character or string of characters you choose.
+
+==Padding and Alignment==
+
+**#setpad "string" or character**
+
+The #setpad directive allows you to specify the padding character(s). Any unused ROM space will be filled with these character(s).
+
+====Examples====
+{{{
+#!c
+#setpad "Hello, World"
+
+#setpad 0xFF
+}}}
+
+**#align basevalue**
+
+The #align directive allows you to align the bytes of the current bank to the specified base. Valid base values are: 
+* 0x0001 (1)
+* 0x0002 (2)
+* 0x0004 (4)
+* 0x0008 (8)
+* 0x0010 (16)
+* 0x0020 (32)
+* 0x0040 (64)
+* 0x0080 (128)
+* 0x0100 (256)
+* 0x0200 (512)
+* 0x0400 (1024, 1K)
+* 0x0800 (2048, 2K)
+* 0x1000 (4096, 4K)
+* 0x2000 (8192, 8K)
+* 0x4000 (16384, 16K)
+* 0x8000 (32768, 32K)
+
+====Examples====
+{{{
+#!c
+#align 4
+
+#align 0x100
+
+#align 8K
+}}}

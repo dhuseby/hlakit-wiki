@@ -1,0 +1,224 @@
+=Conditional Statements=
+
+One of the most useful features of the NESHLA language is the ability to use conditional statements. They simplify and speed up coding, greatly enhance code readability, and eleviate the need for labels, creating structured code.
+
+The majority of conditional branches in assembly language tend to be straight forward jumps calling for useless labels. The labels names are irrelivant, and cause the code to loose structure and become tedious. However, NESHLA supports if, else, while, do while, forever and switch/case expressions! Written in as "while(no carry) {" and such, they do not impeade the assembly language in any form, or make the code any less efficient than manual branch opcodes+labels.
+
+The keywords near and far can be used as well. The 6502 only allows conditional branches to use 8 bit operands, so the jumps can only be within -128 and +127 of the opcode. Normally to overcome this, one would then need to create an extra label, use the opposite comparitive branch, and then write in an absolute jump. This adds to unnecessary tedious coding. NESHLA allows the use of conditional branches with 16 bit operands, and automatically writes the extra code!
+
+== Condition Statements ==
+
+====The Syntax====
+{{{
+#!c
+type ( [near/far] [is/has/no/not] condition )
+}}}
+
+\\
+|=Conditions|=Opcodes|
+|plus|BPL|
+|positive|BPL|
+|greater|BPL|
+|minus|BMI|
+|negative|BMI|
+|less|BMI|
+|overflow|BVC|
+|carry|BCS|
+|nonzero|BNE|
+|set|BNE|
+|true|BNE|
+|1|BNE|
+|equal|BEQ|
+|zero|BEQ|
+|false|BEQ|
+|unset|BNE|
+|clear|BNE|
+|0|BNE|
+
+====Examples====
+{{{
+#!c
+lda scrollTo.flags
+if(set) 
+{
+    compare_16_16(screen.y, scrollTo.y)
+    if(not equal) 
+    {
+        GetScrollTODiv(screen.y, scrollTo.y)
+        if(carry) 
+        {
+            ScrollUp()
+        } 
+        else 
+        {
+            if(no carry)
+            ScrollDown()
+        }
+    }
+}
+}}}
+
+==If Statements==
+
+Use an if statement to implement a conditional statement.
+
+====The Syntax====
+{{{
+#!c
+if ( conditional expression )
+{
+    // code block 1
+}
+// Optionally...
+else
+{
+    // code block 2
+}
+}}}
+
+If conditional expression evaluates to be true, code block 1 is executed, otherwise it is skipped. If an else is appended to the if statement and conditional expression evaluates to be false, code block 2 is executed.
+
+====Example====
+{{{
+#!c
+assign( player.joypad, #0 )
+poll_joystick0()
+and #BUTTON_B
+if(set) 
+{
+    or( player.joypad, #BUTTON_UP )
+} 
+else 
+{
+    and_8( player.joypad, #~BUTTON_UP )
+}
+}}}
+
+== While Statements ==
+
+Use a while statement to implement a conditional loop.
+
+====The Syntax====
+{{{
+#!c
+while ( conditional expression )
+{
+    // code block
+}
+}}}
+
+With a while expression, code block is continually executed until conditional expression evaluates to be FALSE.
+
+====Example====
+{{{
+#!c
+poll_joystick0()
+while(set) 
+{
+    // do stuff
+    poll_joystick0()
+}
+}}}
+
+== Do While Statements ==
+
+Use a do while statement to implement a conditional loop.
+
+====The Syntax====
+{{{
+#!c
+do
+{
+    // code block
+} while ( conditional expression )
+}}}
+
+With a do while statement, code block is executed once. If conditional expression evaluates to be TRUE, code block 1 is executed again, and continually until conditional expression evaluates to be FALSE.
+
+====Example====
+{{{
+#!c
+inline vblank_wait()
+{
+    do
+        lda PPU.STATUS
+    while(is plus)
+}
+}}}
+
+
+== Forever Statements ==
+
+Use a forever statement to implement an infinite loop.
+
+====The Syntax====
+{{{
+#!c
+forever
+{
+    // code block
+}
+}}}
+
+With a forever statement, code block is executed continually until a return keyword, jump opcode which jumps outside of the block is encountered, or the NES is reset.
+
+It is also very useful in debugging. Upon an invalid game state, you can execute an empty forever loop to create a break point in the emulator.
+
+====Example====
+{{{
+#!c
+// an empty forver loop
+forever{}
+
+// a forever loop for game execution
+interrupt main()
+{
+    // initialize game
+    forever 
+    {
+        // do game  
+    }
+}
+}}}
+
+==Switch/Case Statements==
+
+Use the switch statement to pass control to a case which matches the result of register. If no case satisfies the condition, the default case is executed.
+
+====The Syntax====
+{{{
+#!c
+switch ( register ) // REG.A, REG.X, or REG.Y
+{
+    case number 1
+        code block 1
+
+    case number 2
+        code block 2
+
+    default
+        code block 3
+}
+}}}
+
+====Examples====
+{{{
+#!c
+ldx avalue
+switch ( reg.x )
+{
+    case #12
+    { 
+        // braces needed, multiple lines
+        lda #23
+        ora somevar
+    }
+    case #34
+        lda #123 // no braces needed, single line
+
+    default
+    {
+        lda #0
+    }
+}
+}}}

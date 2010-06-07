@@ -1,35 +1,71 @@
-== Welcome ==
+=NESHLA Programming Manual=
 
-Welcome to your wiki! This is the default page we've installed for your convenience. Go ahead and edit it.
+Originally By **Brian Provinciano**\\
+Updated/Maintained By **David Huseby**\\
+Last Updated: **August 7, 2009**
 
-=== Wiki features ===
+* [[NES Programming FAQ and Important Pointers]]
+** [[NES Programming FAQ and Important Pointers|Introduction]]
+** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
+** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
+** [[NES Programming FAQ and Important Pointers|Scrolling]]
 
-This wiki uses the [[http://www.wikicreole.org/|Creole]] syntax, and is fully compatible with the 1.0 specification.
+* [[Preprocessor Keywords]]
+** [[Preprocessor Keywords#Defines|Defines]]
+** [[Preprocessor Keywords|Messages]]
+** [[Preprocessor Keywords|Files]]
+** [[Preprocessor Keywords|ROM and RAM Banks and Blocks]]
+** [[Preprocessor Keywords|Padding]]
+** [[Preprocessor Keywords|Interrupt Vectors]]
+** [[Preprocessor Keywords|iNES Header]]
 
-The wiki itself is actually a hg repository, which means you can clone it, edit it locally/offline, add images or any other file type, and push it back to us. It will be live immediately.
+* [[Variable Declaration and Use]]
 
-Go ahead and try:
+* [[Function Declaration and Use]]
+** [[Function Declaration and Use|Introduction]]
+** [[Function Declaration and Use|Declaring Functions]]
+** [[Function Declaration and Use|return and noreturn]]
+** [[Function Declaration and Use|Parameters]]
+** [[Function Declaration and Use|Interrupt Type Declaring]]
+** [[Function Declaration and Use|Calling Functions]]
 
-{{{
-$ hg clone http://bitbucket.org/wookie/hlakit/wiki/
-}}}
+* [[Integers and Arithmetic Operations]]
+** [[Integers and Arithmetic Operations|Introduction]]
+** [[Integers and Arithmetic Operations|Integers]]
+** [[Integers and Arithmetic Operations|Arithmetic Operations]]
+*** [[Integers and Arithmetic Operations|Operators]]
+*** [[Integers and Arithmetic Operations|Keywords]]
+*** [[Integers and Arithmetic Operations|Examples]]
 
-Wiki pages are normal files, with the .wiki extension. You can edit them locally, as well as creating new ones.
+* [[Conditional Statements]]
+** [[Conditional Statements|Introduction]]
+** [[Conditional Statements|If Statements]]
+** [[Conditional Statements|While Statements]]
+** [[Conditional Statements|Do While Statements]]
+** [[Conditional Statements|Forever Statements]]
+** [[Conditional Statements|Switch Statements]]
 
-=== Syntax highlighting ===
+* [[NESHLA_Programming_Manual|NESHLA Code Library]]
+** [[lib_ram.as]]
+** [[std.h]] (Standard 6502 Functions, Macros and Defines)
+*** [[std_assignment.h]]
+*** [[std_bitwise.h]]
+*** [[std_boolean.h]]
+*** [[std_init.as]]
+*** [[std_jumps.as]]
+*** [[std_math.as]]
+**** [[std_math.h]]
+*** [[std_memory.as]]
+**** [[std_memory.h]]
+*** [[std_palette.as]]
+*** [[std_stack.h]]
+** [[nes.h]] (Standard NES Functions, Macros and Defines)
+*** [[nes_audio.h]]
+*** [[nes_io.h]]
+*** [[nes_mappers.h]]
+*** [[nes_system.h]]
+*** [[nes_video.h]]
 
-You can also highlight snippets of text, we use the excellent [[http://www.pygments.org/|Pygments]] library.
+* [[Compiler Options]]
 
-Here's an example of some Python code:
 
-{{{
-#!python
-
-def wiki_rocks(text):
-	formatter = lambda t: "funky"+t
-	return formatter(text)
-}}}
-
-You can check out the source of this page to see how that's done, and make sure to bookmark [[http://pygments.org/docs/lexers/|the vast library of Pygment lexers]], we accept the 'short name' or the 'mimetype' of anything in there.
-
-Have fun!

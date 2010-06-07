@@ -1,0 +1,118 @@
+=Function Declaration and Use=
+
+==Declaring Functions==
+
+Functions can be declared as standard subroutine Function functions, Interrupt functions, and Inline functions (macros).
+
+====The Syntax====
+{{{
+#!c
+type [noreturn] label([parameter0, parameter1, ... (inline only)])
+{
+    // body
+}
+}}}
+
+**return and noreturn**
+
+With the function typecasting feature, the "RTS" and "RTI" opcodes are automatic. Each function block is automatically terminated with the appropriate opcode.
+
+The return keyword will place the correct return opcode in your code depending on the function type. By using this keyword instead of the actual "RTS" and "RTI" opcodes, the code looks cleaner, and functions can easily be changed from standard to interrupt and vice vera without code modification. As well, macros can contain code which returns, and be used on both interrupts and standard functions.
+
+The noreturn keyword disables the automatic "RTS" and "RTI" opcodes on functions. It can be used to save space when a function ends in a "JMP" or infinite loop, for example.
+
+====Examples====
+{{{
+#!c
+// A sample function using the return keyword
+function SprOAM_FindFree()
+{
+    ldy #0
+    lda [sprchk.addr], y // first byte is size
+    tax
+    do 
+    {
+        iny
+        lda [sprchk.addr], y // each following byte is the oam index
+        if(zero) 
+        {
+            return // returns REG.Y as the free index
+        }
+        dex
+    } while(not zero)
+
+    lda #1
+}
+
+// A start interrupt, since it ends with an infinite loop, there is no need for an RTS
+interrupt.start noreturn main()
+{
+    // initialize game
+    forever 
+    {
+        // do game  
+    }
+}
+}}}
+
+
+==Parameters==
+
+Because NESHLA is an assembler and not a high level language such as C compiler, standard and interrupt functions can not use parameters. Parameters can only be used on inline (macro) functions.
+
+NESHLA supports an unlimited amount of parameters, and they can be labeled anything using alphanumeric characters and underscores.
+
+====Example====
+{{{
+#!c
+inline assign(dest,value)
+{
+    lda value
+    sta dest
+}
+}}}
+
+==Interrupt Type Declaring==
+
+Interrupt functions can optionally be declared with their subtype (start, nmi, irq). This does not automatically make them the function pointed to by the interrupt vector, but rather is used exclusively for error messages. If you define a interrupt as a certain type, then define it to a different interrupt vector, you will get an error. This is handy to prevent the accidental misuse of interrupts.
+
+====Example====
+{{{
+#!c
+// A start interrupt explicitly declared
+interrupt.start main()
+{
+    // initialize game
+    forever 
+    {
+        // do game  
+    }
+}
+
+// an NMI interrupt with no subtype declaration
+interrupt vblank()
+{
+    // do timing
+}
+}}}
+
+==Calling Functions==
+
+Functions can simply be called by their name as they are in high level languages. It will automatically use the correct jump opcode or insert the code (in the case of inline functions). Standard functions will have the "JSR" opcode for calling, while interrupts will be called with the "JMP" opcode. It addition, it will help prevent errors in your code, such as using a standard subroutine for an interrupt by mistake.
+
+====Example====
+{{{
+#!c
+// a sample macro
+inline assign(dest,value)
+{
+    lda value
+    sta dest
+}
+
+// normal function calling it
+function testFunction()
+{
+    assign( someVar, #12 )
+}
+}}}

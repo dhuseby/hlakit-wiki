@@ -1,0 +1,61 @@
+=ROM and RAM=
+
+NESHLA includes preprocessor keywords for dealing with ROM and RAM blocks.
+
+Though standard assemblers use a single ".org" keyword, separate keywords are used for ROM and RAM blocks. This is because ROM and RAM blocks are slightly different, and by telling the assembler which areas are ROM and which are RAM, it can detect more errors in your code and aid in your code being better quality.
+
+==RAM Block Declarations==
+
+**#ram.org blockaddress[, maxsize]**
+
+Each block of RAM declarations begins with a #ram.org.
+
+The #ram.org keyword takes one or two parameters. The first parameter, blockaddress, specifies the starting address of the current RAM block in which all future declarations will reside from. Optionally (recommended), you can specify the maximum size of the declared RAM block with the second parameter, maxsize. This will prevent accidental overlapping of data and ensure better code.
+
+**#ram.end**
+
+The #ram.end keyword ends RAM block declarations. It can be used optionally after #ram.org blocks to ensure RAM declarations are all taken care of and enclosed within the specified regions, ensuring better code.
+
+==ROM Block Declarations==
+
+**#rom.org blockaddress[, maxsize]**
+
+Each block of ROM must begin with a #rom.org.
+
+The #rom.org keyword takes one or two parameters. The first parameter, blockaddress, specifies the starting address of the current ROM block in which all future code and data will reside from. Optionally, you can specify the maximum size of the declared ROM block with the second parameter, maxsize. This will prevent accidentally filling a block with too much data.
+
+**#rom.end**
+
+The #rom.end keyword ends ROM block declarations. It can be used optionally after #rom.org blocks to ensure fully enclosed code.
+
+**#rom.banksize size**
+
+The #rom.banksize keyword sets the default banksize to size. All banks will then be aligned along this boundary. For example, if size is 16, bank 0 will be at 0x0000 in the ROM, bank 1 will be at 0x4000, bank 2 will be at 0x8000, etc. If size was 32, bank 0 will be at 0x0000, bank 1 will be at 0x8000, bank 2 will be at 0x10000, etc.
+
+If this keyword is not used, the default banksize (16K) is used.
+
+**#rom.bank banknumber[, maxsize]**
+
+The #rom.bank keyword sets the current bank of the ROM which will be written to. The first parameter, banknumber, specifies the bank number (see #rom.banksize). Optionally, you can specify the maximum size of the declared ROM bank with the second parameter, maxsize. This will prevent accidentally filling a bank with too much data.
+
+The bank specifies the position in the ROM (PRG binary) file at which the data is written to. Multiple banks can have the same runtime offset, as they are swapped in and out of the 32K PRG memory space. That actual address is specified by #rom.org.
+
+==CHR Block Declarations==
+
+**#chr.banksize size**
+
+The #chr.banksize keyword sets the default chr banksize to size. All chr banks will then be aligned along this boundary. For example, if size is 4, bank 0 will be at 0x0000 in the CHR ROM, bank 1 will be at 0x1000, bank 2 will be at 0x2000, etc. If size was 16, bank 0 will be at 0x0000, bank 1 will be at 0x4000, bank 2 will be at 0x8000, etc.
+
+If this keyword is not used, the default banksize (4K) is used.
+
+**#chr.bank banknumber[, maxsize]**
+
+The #chr.bank keyword sets the current bank of the ROM which will be written to. The first parameter, banknumber, specifies the bank number (see #chr.banksize). Optionally, you can specify the maximum size of the declared ROM bank with the second parameter, maxsize. This will prevent accidentally filling a bank with too much data.
+
+**#chr.link "filename"[, size]**
+
+The #chr.link keyword links binary files with CHR ROM data to the output NES ROM file. It takes one or two parameters.
+
+The first parameter, "filename", specifies the name of the file which contains the data.
+
+Optionally, you can specify the size of the desired CHR block with the second parameter, size. This will do two things. First, if the size of the CHR data is smaller than size, it will pad to size. Second, if the size of the CHR data is larger than size, it will give an error message preventing accidental block overflows.

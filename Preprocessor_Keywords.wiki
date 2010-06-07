@@ -1,0 +1,85 @@
+=Preprocessor Keywords=
+
+==Defines==
+
+* [[Preprocessor Defines|Introduction]]
+
+* [[Preprocessor Defines|#define label[, value]]]
+* [[Preprocessor Defines|#undef label]]
+
+* [[Preprocessor Defines|#ifdef label]]
+* [[Preprocessor Defines|#ifndef label]]
+* [[Preprocessor Defines|#else]]
+* [[Preprocessor Defines|#endif]]
+
+==Messages==
+
+* [[Preprocessor Messages|Introduction]]
+
+* [[Preprocessor Messages|#todo ["message"]]]
+* [[Preprocessor Messages|#warning ["message"]]]
+* [[Preprocessor Messages|#error ["message"]]]
+* [[Preprocessor Messages|#fatal ["message"]]]
+
+* [[Preprocessor Messages|#tell.bank]]
+* [[Preprocessor Messages|#tell.bankoffset]]
+* [[Preprocessor Messages|#tell.banksize]]
+* [[Preprocessor Messages|#tell.bankfree]]
+* [[Preprocessor Messages|#tell.banktype]]
+
+==Files==
+
+* [[Preprocessor Files|Introduction]]
+
+* [[Preprocessor Files|#include "filename"]]
+* [[Preprocessor Files|#incbin "filename"]]
+
+* [[Preprocessor Files|#usepath "pathname"]]
+
+==ROM and RAM Banks and Blocks==
+
+* [[Preprocessor ROM and RAM Banks and Blocks|Introduction]]
+
+* [[Preprocessor ROM and RAM Banks and Blocks|#ram.org blockaddress[, maxsize]]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#ram.end]]
+
+* [[Preprocessor ROM and RAM Banks and Blocks|#rom.org blockaddress[, maxsize]]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#rom.end]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#rom.banksize size]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#rom.bank banknumber[, maxsize]]]
+
+* [[Preprocessor ROM and RAM Banks and Blocks|#chr.banksize size]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#chr.bank banknumber[, maxsize]]]
+* [[Preprocessor ROM and RAM Banks and Blocks|#chr.link "filename"[, size]]]
+
+==Padding==
+
+* [[Preprocessor Padding|Introduction]]
+
+* [[Preprocessor Padding|#setpad "string" or character]]
+* [[Preprocessor Padding|#align basevalue]]
+
+==Interrupt Vectors==
+
+* [[Preprocessor Interrupt Vectors|Introduction]]
+
+* [[Preprocessor Interrupt Vectors|#interrupt.start function]]
+* [[Preprocessor Interrupt Vectors|#interrupt.nmi function]]
+* [[Preprocessor Interrupt Vectors|#interrupt.irq function]]
+
+==iNES Header==
+
+* [[Preprocessor iNES Header|Introduction]]
+
+* [[Preprocessor iNES Header|#ines.mapper "name"/number]]
+* [[Preprocessor iNES Header|#ines.mirroring ("vertical"/"horizontal")]]
+* [[Preprocessor iNES Header|#ines.fourscreen ("yes"/"no")]]
+* [[Preprocessor iNES Header|#ines.battery ("yes"/"no")]]
+* [[Preprocessor iNES Header|#ines.trainer ("yes"/"no")]]
+* [[Preprocessor iNES Header|#ines.prgrepeat (number)]]
+* [[Preprocessor iNES Header|#ines.chrrepeat (number)]]
+* [[Preprocessor iNES Header|#ines.off]]
+
+==Developer Information==
+
+The prepocessor directives are defined in [[http://bitbucket.org/wookie/neshla/src/tip/src/exp_preprocess.c|src/exp_preprocess.c]] and [[http://bitbucket.org/wookie/neshla/src/tip/src/exp_preprocess.h|src/exp_preprocess.h]].

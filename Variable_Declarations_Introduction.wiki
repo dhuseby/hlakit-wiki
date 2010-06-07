@@ -1,0 +1,142 @@
+[[NESHLA Programming Manual]] : [[Variable Declaration and Use]] : Variable Declarations and Manipulators
+
+=Variable Declarations and Manipulators=
+
+==Variable Declarations==
+
+**The Syntax**
+
+{{{
+#!c
+// standard variables
+[shared] type label [: address ] [= value]
+
+// typedef variables
+typedef [shared] type label [: address ]
+
+// variable arrays
+[shared] type label [] or [size] = 
+{
+    // elements
+}
+
+// typedef arrays
+typedef [shared] type label[size]
+
+// structs
+[typedef] [shared] struct label [: address ] 
+{
+    // other variables
+}
+}}}
+
+**Example**
+
+{{{
+#!c
+byte counter
+byte amount = 123
+
+pointer nametablePtr // pointer for the name table
+
+struct time 
+{
+    byte ticks;
+    byte seconds
+    byte minutes
+    byte hours
+}
+
+struct scrollTo 
+{
+    byte flags
+    word x, y
+}
+
+struct player 
+{
+    byte sprite
+    byte joypad
+    struct move 
+    {
+        byte x, y
+        byte amount
+    }
+    byte anArray[10]
+}
+}}}
+ 
+**Variable Arrays**
+
+Variable arrays can be defined with a specific size value as a place holder, or have their elements explicitly defined. If the elements are explicitly defined, the size does not need to be specified.
+
+**Examples**
+{{{
+#!c
+// standard place holder variable array declaration
+
+#ram.org 0x0200, 0x100 // start, max block len
+OAM_ENTRY sproam[SPR_OAM_TOTAL]
+#ram.end
+
+// ROM variable array declaration with defined elements
+
+byte player_tiles[] = 
+{
+    player_tiles_walk:
+    spr00: $01,$02, $03,$04, $05,$06,
+    spr01: $07,$08, $43,$44, $41,$42,
+    spr02: $11,$32, $54,$11, $42,$32
+}
+}}}
+
+==Manipulators==
+
+The variable manipulator keywords are used at variable declaration and can change the use and properties of a variable.
+
+**typedef**
+
+The typedef keyword creates a variable type/struct skeleton. A variable with the typedef keyword does not actually declare a variable which takes up space in ROM or RAM, only a new type. The new variable type can then be used like a standard variable type.
+
+**Examples**
+{{{
+#!c
+// defines a new variable type INT of the byte type
+typedef byte INT
+INT myNewIntVariable
+
+// defines a new variable type OAM_ENTRY of a struct
+typedef struct OAM_ENTRY 
+{
+    BYTE y
+    BYTE tile
+    BYTE attributes
+    BYTE x
+}
+OAM_ENTRY oament
+...
+assign(oament.tile, #123)
+
+**shared**
+
+The shared keyword is used exclusively for warning messages. If you turn the warning level up to "2" or higher, it will warn you if a variable is accessed in both interrupts and functions, unless of course, it's declared as a shared variable. This is handy to prevent certain variables from being hijacked during an interrupt execution.
+
+**Examples**
+
+{{{
+#!c
+shared byte varForInterruptsAndFunctions
+}}}
+
+**':' (address specifier)**
+
+The ':' operator on variable declarations allows you to manually specify the exact location of the variable. It is useful for cases such as registers.
+
+**Examples**
+
+{{{
+#!c
+BYTE PPU_CNT0      :$2000
+BYTE SPR_DMA       :$4014
+BYTE PPU_IO        :$2007
+}}}
