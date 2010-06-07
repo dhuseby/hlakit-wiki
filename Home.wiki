@@ -12,15 +12,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ==Contents==
 
 * [[FAQ]]
-* [[Target Machines]]
-** [[Atari Lynx]]
-*** More coming...
-** [[Nintendo Entertainment System]]
-*** [[NES Programming FAQ and Important Pointers]]
-**** [[NES Programming FAQ and Important Pointers|Introduction]]
-**** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
-**** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
-**** [[NES Programming FAQ and Important Pointers|Scrolling]]
 
 * [[Preprocessor Keywords]]
 ** [[Preprocessor Keywords#Defines|Defines]]
@@ -56,6 +47,16 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Conditional Statements|Do While Statements]]
 ** [[Conditional Statements|Forever Statements]]
 ** [[Conditional Statements|Switch Statements]]
+
+* [[Target Machines]]
+** [[Atari Lynx]]
+*** More coming...
+** [[Nintendo Entertainment System]]
+*** [[NES Programming FAQ and Important Pointers]]
+**** [[NES Programming FAQ and Important Pointers|Introduction]]
+**** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
+**** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
+**** [[NES Programming FAQ and Important Pointers|Scrolling]]
 
 * [[NESHLA_Programming_Manual|NESHLA Code Library]]
 ** [[lib_ram.as]]
