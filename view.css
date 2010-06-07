@@ -1,5 +1,8 @@
 body { background-color: #e7f1ff; /* background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oFGhcLG/jNCLAAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAEhJREFUKM+V0TEKACAMBME9y/z/rddqJ4iCl5RhlhQRj7E9X/uqkjoYQB18BAneQYoB1MEAo4Ntz9HB14UfPoIE7yDF1+OSJy4ymC/z5lAVaAAAAABJRU5ErkJggg=='); */  padding: 65px 0; text-align: center; font-family: Arial, Helvetica, sans-serif; }
-a, a:hover { color: #185787; }
+a, a:hover { color: #185787; text-decoration: none; }
+li { list-style: disc; }
+li li { list-style: circle; }
+li li li { list-style: square; }
 .clear { clear: both; }
 .container { width: 640px; background: #FFF; position: relative; margin: 0 auto; width: 580px; }
 .tools { border-bottom: 1px dashed #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: left; padding: 0 34px 11px 34px; }
