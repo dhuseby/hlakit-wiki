@@ -78,6 +78,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 *** __Sega Genesis__
 *** __Sega Nomad__
 *** __Neo Geo AES__
+** __ARM7TDMI__
+*** __Nintendo Game Boy Advance__
 
 
 * __Target Code Libraries__
@@ -96,3 +98,5 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 **** [[std_stack.h]]
 ** __Sharp LR35902 Z80__
 ** __Zilog Z80__
+** __Motorola 68000__
+** __ARM7TDMI__
