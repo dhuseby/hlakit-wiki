@@ -83,7 +83,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * __Target Code Libraries__
 ** __6502__
-*** [[std.h]] (Standard 6502 Functions, Macros and Defines)
+*** [[std.h]]
 **** [[std_assignment.h]]
 **** [[std_bitwise.h]]
 **** [[std_boolean.h]]
