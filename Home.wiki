@@ -68,6 +68,17 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ****** [[nes_mappers.h]]
 ****** [[nes_system.h]]
 ****** [[nes_video.h]]
+*** __Apple II__
+** __Sharp LR35902 Z80__
+*** __Nintendo Game Boy__
+** __Zilog Z80__
+*** __Sega Master System__
+*** __Sega Game Gear__
+** __Motorola 68000__
+*** __Sega Genesis__
+*** __Sega Nomad__
+*** __Neo Geo AES__
+
 
 * __Target Code Libraries__
 ** __6502__
@@ -83,3 +94,5 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[std_memory.h]]
 **** [[std_palette.as]]
 **** [[std_stack.h]]
+** __Sharp LR35902 Z80__
+** __Zilog Z80__
