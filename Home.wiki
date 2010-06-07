@@ -53,7 +53,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 * __Target Machines__
 ** __6502__
 *** __Atari Lynx__
-**** More coming...
 *** __Nintendo Entertainment System__
 **** [[NES Programming FAQ and Important Pointers]]
 ***** [[NES Programming FAQ and Important Pointers|Introduction]]
