@@ -13,7 +13,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * [[FAQ]]
 
-* [[The Preprocessor]]
+* The Preprocessor
 ** [[Preprocessor Defines|Defines]]
 ** [[Preprocessor Messages|Messages]]
 ** [[Preprocessor Files|Files]]
