@@ -28,6 +28,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[Preprocessor Lynx Encrypted Loader|Encrypted Loader]]
 **** Nintendo Entertainment System
 ***** [[Preprocessor iNES Header|iNES Header]]
+***** [[Preprocessor NES CHR Banks|CHR Banks]]
 
 * [[Variable Declaration and Use]]
 ** [[Variable Declaration and Use|Types]]
