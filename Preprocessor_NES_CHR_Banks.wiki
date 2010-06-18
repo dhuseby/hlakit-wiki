@@ -1,0 +1,19 @@
+==CHR Block Declarations==
+
+**#chr.banksize size**
+
+The #chr.banksize keyword sets the default chr banksize to size. All chr banks will then be aligned along this boundary. For example, if size is 4, bank 0 will be at 0x0000 in the CHR ROM, bank 1 will be at 0x1000, bank 2 will be at 0x2000, etc. If size was 16, bank 0 will be at 0x0000, bank 1 will be at 0x4000, bank 2 will be at 0x8000, etc.
+
+If this keyword is not used, the default banksize (4K) is used.
+
+**#chr.bank banknumber[, maxsize]**
+
+The #chr.bank keyword sets the current bank of the ROM which will be written to. The first parameter, banknumber, specifies the bank number (see #chr.banksize). Optionally, you can specify the maximum size of the declared ROM bank with the second parameter, maxsize. This will prevent accidentally filling a bank with too much data.
+
+**#chr.link "filename"[, size]**
+
+The #chr.link keyword links binary files with CHR ROM data to the output NES ROM file. It takes one or two parameters.
+
+The first parameter, "filename", specifies the name of the file which contains the data.
+
+Optionally, you can specify the size of the desired CHR block with the second parameter, size. This will do two things. First, if the size of the CHR data is smaller than size, it will pad to size. Second, if the size of the CHR data is larger than size, it will give an error message preventing accidental block overflows.
