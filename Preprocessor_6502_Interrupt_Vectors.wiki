@@ -4,7 +4,7 @@ The 6502 CPU support three interrupt vectors that are store in the CPU RAM, in m
 
 **Start** -- The function run when the CPU comes out of reset.
 
-***NMI** -- The function run on the non-maskable interrupt which is triggered by a state change on the NMI interrupt pin.  Different platforms use this for different purposes.
+**NMI** -- The function run on the non-maskable interrupt which is triggered by a state change on the NMI interrupt pin.  Different platforms use this for different purposes.
 
 **IRQ** -- The function run when the software interrupt occurs.  In most cases this is driven by a configurable timer but there are platforms that use it differently.
 
