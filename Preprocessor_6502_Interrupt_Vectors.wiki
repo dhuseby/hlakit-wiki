@@ -15,7 +15,7 @@ HLAKit 6502 preprocessor supports directives that assign different functions to 
 
 **#interrupt.start function**
 
-The #interrupt.start directive specifies the function which the start (reset) interrupt vector should point to. When the NES is turned on or reset, this function will be executed.
+The #interrupt.start directive specifies the function which the start (reset) interrupt vector should point to.
 
 ====Examples====
 {{{
@@ -31,7 +31,9 @@ interrupt main()
 
 **#interrupt.nmi function**
 
-The #interrupt.nmi directive specifies the function which the non maskable (vblank) interrupt vector should point to. When the NES' screen refresh is complete, the nmi interrupt function is executed. It is called on a 60hz basis on NTSC systems, and 50hz on PAL. It can be used for timing as well as writing to the video RAM. Writes to the video RAM during the screen refresh will usually cause serious problems with the graphics, so to write to it, you should either do it during the nmi or turn the screen off first.
+The #interrupt.nmi directive specifies the function which the non maskable interrupt vector should point to. 
+
+On the NES, when a screen refresh is complete (vblank), the nmi interrupt function is executed. It is called on a 60hz basis on NTSC systems, and 50hz on PAL. It can be used for timing as well as writing to the video RAM. Writes to the video RAM outside of a vblank will usually cause serious problems with the graphics, so to write to it.
 
 ====Examples====
 {{{
@@ -47,7 +49,11 @@ interrupt vblank()
 
 **#interrupt.irq function**
 
-The #interrupt.irq directive specifies the function which the interrupt request vector should point to. Mappers control the IRQ, and it is generally executed upon hblank (when a scanline is complete), but can be controlled to execute on any event the mapper needs.
+The #interrupt.irq directive specifies the function which the interrupt request vector should point to. 
+
+On the NES, mappers control the IRQ, and it is generally executed upon hblank (when a scanline is complete), but can be controlled to execute on any event the mapper needs.
+
+On the Lynx, the IRQ is triggered by the configurable timer and is generally used for any regularly occurring event such as updating animations, sounds, and/or pumping an event system.
 
 ====Examples====
 {{{
