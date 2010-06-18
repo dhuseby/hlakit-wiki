@@ -1,6 +1,9 @@
 =6502 Interrupt Vectors=
 
-The NES Interrupt Vectors are pointers to interrupt functions in code which gets executed upon certain events.
+The 6502 CPU support three interrupt vectors that are store in the CPU RAM, in most cases at the top of memory.  The three interrupt vectors are:
+;Start: foo
+;NMI: bar
+;IRQ: baz
 
 ==Vector Declarations==
 
