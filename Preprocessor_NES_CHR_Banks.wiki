@@ -1,4 +1,4 @@
-==CHR Block Declarations==
+=CHR Block Declarations=
 
 **#chr.banksize size**
 
