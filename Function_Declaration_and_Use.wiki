@@ -13,7 +13,7 @@ type [noreturn] label([parameter0, parameter1, ... (inline only)])
 }
 }}}
 
-===**return and noreturn**===
+===return and noreturn===
 
 With the function typecasting feature, the "RTS" and "RTI" opcodes are automatic. Each function block is automatically terminated with the appropriate opcode.
 
