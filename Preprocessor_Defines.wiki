@@ -1,6 +1,6 @@
 =Preprocessor Defines=
 
-NESHLA includes preprocessor keywords for defining labels which can store code and data, or control compilation flow.
+HLAKit includes preprocessor keywords for defining labels which can store code and data, or control compilation flow.
 
 ==Definition Declarations==
 
