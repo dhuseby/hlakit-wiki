@@ -4,7 +4,7 @@ HLAKit includes preprocessor keywords for defining labels which can store code a
 
 ==Definition Declarations==
 
-**#define label[, value]**
+**//#define label[, value]//**
 
 The #define directive gives the ability to eliminate code duplication and enhance code readability. By defining magic numbers with names, code readability can be enhanced, and adjustments can be made easily.
 
