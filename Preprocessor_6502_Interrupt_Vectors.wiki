@@ -17,7 +17,7 @@ HLAKit 6502 preprocessor supports directives that assign different functions to 
 
 The #interrupt.start directive specifies the function which the start (reset) interrupt vector should point to.
 
-====Examples====
+====Example====
 {{{
 #!c
 #interrupt.start main
@@ -35,7 +35,7 @@ The #interrupt.nmi directive specifies the function which the non maskable inter
 
 On the NES, when a screen refresh is complete (vblank), the nmi interrupt function is executed. It is called on a 60hz basis on NTSC systems, and 50hz on PAL. It can be used for timing as well as writing to the video RAM. Writes to the video RAM outside of a vblank will usually cause serious problems with the graphics, so to write to it.
 
-====Examples====
+====Example====
 {{{
 #!c
 #interrupt.nmi vblank
@@ -55,7 +55,7 @@ On the NES, mappers control the IRQ, and it is generally executed upon hblank (w
 
 On the Lynx, the IRQ is triggered by the configurable timer and is generally used for any regularly occurring event such as updating animations, sounds, and/or pumping an event system.
 
-====Examples====
+====Example====
 {{{
 #!c
 #interrupt.irq irq
