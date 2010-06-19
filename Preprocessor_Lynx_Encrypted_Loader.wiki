@@ -1,0 +1,19 @@
+=Encrypted Loader=
+
+When the Atari Lynx boots, the built-in ROM code loads and decrypts a single 256 byte frame of RSA encoded executable into memory location 0x0200 and then jumps to it.  This initial executable is called the loader.  It is possible to have a loader larger than 256 bytes long by making the first frame of loader code adjust a variable in the zero page and then jumping back to the RSA load and decrypt function in the Atari Lynx ROM.
+
+After every frame of data is loaded and decrypted, the ROM code jumps to 0x0200.  That means you need to use self-modifying code at the beginning of the first frame to load multiple frames.  There is a more extensive description [[http://www.classicgamedev.com/Blog:Hacking_Classics/Lynx_Encryption|here]]
+
+**#lynx.loader function**
+
+The HLAKit Lynx Platform code supports designating a loader function that gets wrapped in some boilerplate loader code and then gets encrypted using the known Lynx RSA private key.
+
+====Examples====
+{{{
+#!c
+#lynx.loader loader
+
+function loader() {
+    // loader code
+}
+}}}
