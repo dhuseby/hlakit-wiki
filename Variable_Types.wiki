@@ -4,6 +4,7 @@ HLAKit supports a fairly standard set of type names.  For complex data structure
 
 It is important to note that the **dword** and the 32-bit **pointer** types are only present on CPU's that support them (e.g. 32-bit CPU's).  On 8/16-bit CPU's like the 6502, there is no **dword** and the **pointer** type is 16-bits.
 
+
 ====The Types====
 |=Type|=Bytes|=Integer Range|=Description|=Notes|
 |byte|1|0 to 255|8 bit integer||
