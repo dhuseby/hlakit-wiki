@@ -60,7 +60,7 @@ struct player
 }
 }}}
  
-===**Variable Arrays**===
+===Variable Arrays===
 
 Variable arrays can be defined with a specific size value as a place holder, or have their elements explicitly defined. If the elements are explicitly defined, the size does not need to be specified.
 
