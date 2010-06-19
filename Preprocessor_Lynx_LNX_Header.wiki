@@ -6,7 +6,7 @@ Preprocessor settings for specifying the block and bank size, as well as if the 
 
 ==Misc==
 
-**#lnx.off**
+**#lnx.off**\\
 Normally, HLAKit will put a standard .lnx file header on any Lynx ROM binary image it creates.  This option turns off outputting a header.
 
 ====Example====
