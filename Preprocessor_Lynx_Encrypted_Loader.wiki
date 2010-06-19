@@ -13,7 +13,8 @@ The HLAKit Lynx Platform code supports designating a loader function that gets w
 #!c
 #lynx.loader loader
 
-function loader() {
+function loader() 
+{
     // loader code
 }
 }}}
