@@ -25,7 +25,7 @@ typedef [shared] type label[size]
 }
 }}}
 
-====Example====
+====Examples====
 {{{
 #!c
 byte counter
