@@ -37,7 +37,7 @@ sprite_pal:
 
 **#usepath "pathname"**
 
-**//NOTE: this is deprecated as of version 1.0.2 which supports specifying include paths as command line arguments to the compiler, this feature will be completely removed in version 2.0.0 //**
+**//NOTE: this is deprecated as of version 0.0.2 which supports specifying include paths as command line arguments to the compiler, this feature will be completely removed in version 1.0.0 //**
 
 The #usepath directive adds the path "pathname" to the include and incbin search paths so you need no type entire paths to files to include them.
 
