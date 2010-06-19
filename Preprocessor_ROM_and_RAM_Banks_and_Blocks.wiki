@@ -1,6 +1,6 @@
 =ROM and RAM=
 
-NESHLA includes preprocessor keywords for dealing with ROM and RAM blocks.
+HLAKit includes preprocessor keywords for dealing with ROM and RAM blocks.
 
 Though standard assemblers use a single ".org" keyword, separate keywords are used for ROM and RAM blocks. This is because ROM and RAM blocks are slightly different, and by telling the assembler which areas are ROM and which are RAM, it can detect more errors in your code and aid in your code being better quality.
 
