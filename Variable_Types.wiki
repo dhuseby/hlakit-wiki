@@ -6,7 +6,7 @@ It is important to note that the **dword** and the 32-bit **pointer** types are 
 \\
 
 ====The Types====
-|=Type|=Bytes|=Integer Range|=Description|=Notes|
+|=Type|=Bytes|=Range|=Description|=Notes|
 |byte|1|0 to 255|8 bit integer||
 |char|1|-128 to +127|8 bit character||
 |bool|1|zero or nonzero|8 bit boolean value (true/false)||
