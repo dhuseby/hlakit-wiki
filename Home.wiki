@@ -29,7 +29,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[Preprocessor iNES Header|iNES Header]]
 ***** [[Preprocessor NES CHR Banks|CHR Banks]]
 
-* [[Variable Declaration and Use]]
+* Variable Declaration and Use
 ** [[Variable Types|Types]]
 ** [[Variable Declarations|Declarations]]
 ** [[Variable Manipulators|Manipulators]]
