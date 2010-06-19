@@ -1,6 +1,6 @@
 =iNES Header=
 
-NESHLA includes preprocessor keywords for defining the ROM iNES header.
+HLAKit includes preprocessor keywords for defining the iNES header for the resulting ROM file.
 
 There is no need to define the amount of PRG or CHR banks for the header. The compiler automatically calculates and pads accordingly. You can, however, specify the mapper (cartridge chipset), mirroring, and other attributes.
 
