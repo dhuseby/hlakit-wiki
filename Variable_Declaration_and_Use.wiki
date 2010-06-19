@@ -141,7 +141,7 @@ The shared keyword is used exclusively for warning messages. If you turn the war
 shared byte varForInterruptsAndFunctions
 }}}
 
-**//':' (address specifier)//**
+===':' (address specifier)===
 
 The ':' operator on variable declarations allows you to manually specify the exact location of the variable. It is useful for cases such as registers.
 
