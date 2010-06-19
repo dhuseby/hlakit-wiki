@@ -20,3 +20,5 @@ function loader()
     // loader code
 }
 }}}
+
+The boilerplate loader code is a simple self-modifying bit of code that is able to load an arbitrary number of frames of encrypted data from the ROM.  This allows you to make your loader function as long and complex as you would like and the loader just works.
