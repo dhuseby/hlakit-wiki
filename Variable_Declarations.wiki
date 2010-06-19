@@ -1,0 +1,85 @@
+=Variable Declarations=
+
+====The Syntax====
+{{{
+#!c
+// standard variables
+[shared] type label [: address ] [= value]
+
+// typedef variables
+typedef [shared] type label [: address ]
+
+// variable arrays
+[shared] type label [] or [size] = 
+{
+    // elements
+}
+
+// typedef arrays
+typedef [shared] type label[size]
+
+// structs
+[typedef] [shared] struct label [: address ] 
+{
+    // other variables
+}
+}}}
+
+====Example====
+{{{
+#!c
+byte counter
+byte amount = 123
+
+pointer nametablePtr // pointer for the name table
+
+struct time 
+{
+    byte ticks
+    byte seconds
+    byte minutes
+    byte hours
+}
+
+struct scrollTo 
+{
+    byte flags
+    word x, y
+}
+
+struct player 
+{
+    byte sprite
+    byte joypad
+    struct move 
+    {
+        byte x, y
+        byte amount
+    }
+    byte anArray[10]
+}
+}}}
+ 
+===Variable Arrays===
+
+Variable arrays can be defined with a specific size value as a place holder, or have their elements explicitly defined. If the elements are explicitly defined, the size does not need to be specified.
+
+====Examples====
+{{{
+#!c
+// standard place holder variable array declaration
+
+#ram.org 0x0200, 0x100 // start, max block len
+OAM_ENTRY sproam[SPR_OAM_TOTAL]
+#ram.end
+
+// ROM variable array declaration with defined elements
+
+byte player_tiles[] = 
+{
+    player_tiles_walk:
+    spr00: $01,$02, $03,$04, $05,$06,
+    spr01: $07,$08, $43,$44, $41,$42,
+    spr02: $11,$32, $54,$11, $42,$32
+}
+}}}
