@@ -1,6 +1,6 @@
 =Messages=
 
-NESHLA gives you the ability to manually set compiler messages, as well as get additional information about the current location in the code.
+HLAKit gives you the ability to manually set compiler messages, as well as get additional information about the current location in the code.
 
 ==Compiler Messages==
 
