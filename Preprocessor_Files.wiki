@@ -21,7 +21,7 @@ The #include directive inserts an addition file into the current source file. Th
 
 The #incbin directive inserts the specified binary file into the output binary at the current bank location. The data is like that which would be declared through a code array, but from an external file.
 
-It is commonly used for the insertion of CHR data in the CHR ROM banks, as well as for name table data in PRG ROM banks.
+On the NES, it is commonly used for the insertion of CHR data in the CHR ROM banks, as well as for name table data in PRG ROM banks.
 
 ====Examples====
 {{{
