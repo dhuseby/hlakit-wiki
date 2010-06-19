@@ -21,7 +21,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Preprocessor Padding|Padding]]
 ** Platform Specific
 *** 6502
-**** [[Preprocessor 6502 Interrupt Vectors|6502 Interrupt Vectors]]
+**** [[Preprocessor 6502 Interrupt Vectors|Interrupt Vectors]]
 **** Atari Lynx
 ***** [[Preprocessor Lynx LNX Header|.lnx Header]]
 ***** [[Preprocessor Lynx Encrypted Loader|Encrypted Loader]]
