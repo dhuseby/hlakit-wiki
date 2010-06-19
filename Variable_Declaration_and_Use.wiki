@@ -12,8 +12,8 @@ It is important to note that the **dword** and the 32-bit **pointer** types are 
 |char|1|-128 to +127|8 bit character||
 |bool|1|zero or nonzero|8 bit boolean value (true/false)||
 |word|2|0 to 65535|16 bit integer||
-|dword|4|0 to 4294967295|32 bit integer|32-bit CPU's only|
-|pointer|2/4|0x0000 to 0xFFFF 8/16 bit\\ 0x00000000 to 0xFFFFFFFF 32 bit|16/32 bit address pointer integer|32-bit pointers on 32-bit CPU's only|
+|dword|4|0 to 4294967295|32 bit integer|32 bit CPU's only|
+|pointer|2/4|0x0000 to 0xFFFF 8/16 bit\\ 0x00000000 to 0xFFFFFFFF 32 bit|16/32 bit address pointer integer|32 bit pointers on 32-bit CPU's only|
 |struct|-|-|A collection of variables and data||
 
 ==Variable Declarations==
