@@ -10,7 +10,7 @@ After every frame of data is loaded and decrypted, the ROM code jumps to 0x0200.
 
 The HLAKit Lynx Platform code supports designating a loader function that gets wrapped in some boilerplate loader code and then gets encrypted using the known Lynx RSA private key.
 
-====Examples====
+====Example====
 {{{
 #!c
 #lynx.loader loader
