@@ -22,3 +22,11 @@ function loader()
 }}}
 
 The boilerplate loader code is a simple self-modifying bit of code that is able to load an arbitrary number of frames of encrypted data from the ROM.  This allows you to make your loader function as long and complex as you would like and the loader just works.
+
+The trick to making the boilerplate work is to put a BRA . instruction as the first instruction in the first frame of executable so that it lands at 0x0200.  After the first frame is loaded and decrypted, the CPU will jump to 0x0200.  The first time it does this, the BRA will just branch to the next instruction.  The next instructions will decrement a frame counter and modify the destination pointer for the next frame of encrypted data to be loaded into and then jump back into the RSA load and decrypt ROM function.
+
+By using the #lynx.loader directive, HLAKit will compile your loader function into a binary executable and measure how large it is.  It will then figure out how many frames of encrypted data are needed to store the loader and it will hard code the frame counter in the boilerplate loader code so that the entire loader function is loaded and decrypted into memory.  When the last frame of encrypted data is loaded and decrypted, the boilerplate code will jump to the loader function.
+
+There is a caveat here.  I wouldn't do to much in your loader function other than load in your main executable and jump to it.  To do anything else like show a graphic and/or play music you will likely call library functions to do that.  Since the entire loader has to be encrypted, the library functions have to be included in the binary image that gets encrypted, thus duplicating the library function you use in the resulting binary.
+
+My general strategy is to write a loader function that is the bare minimum needed to load in the main executable so that the encrypted loaded binary is as small and fast as possible.
