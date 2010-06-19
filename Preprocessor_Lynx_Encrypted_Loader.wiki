@@ -4,8 +4,6 @@ When the Atari Lynx boots, the built-in ROM code loads and decrypts a single 256
 
 After every frame of data is loaded and decrypted, the ROM code jumps to 0x0200.  That means you need to use self-modifying code at the beginning of the first frame to load multiple frames.  There is a more extensive description [[http://www.classicgamedev.com/Blog:Hacking_Classics/Lynx_Encryption|here]].
 
-==Loader Function==
-
 **#lynx.loader function**
 
 The HLAKit Lynx Platform code supports designating a loader function that gets wrapped in some boilerplate loader code and then gets encrypted using the known Lynx RSA private key.
