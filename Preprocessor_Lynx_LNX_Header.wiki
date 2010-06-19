@@ -1,0 +1,17 @@
+=Lynx .lnx Header=
+
+==Cart==
+
+Preprocessor settings for specifying the block and bank size, as well as if the ROM has an EEPROM and what type it is.  Add a setting for specifying the initial value of AUDIOIN pin.
+
+==Misc==
+
+**#lnx.off**
+
+Normally, HLAKit will put a standard .lnx file header on any Lynx ROM binary image it creates.  This option turns off outputting a header.
+
+====Example====
+{{{
+#!c
+#lnx.off
+}}}
