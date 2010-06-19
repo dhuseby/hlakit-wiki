@@ -8,7 +8,7 @@ The 6502 CPU support three interrupt vectors that are store in the CPU RAM, in m
 
 **IRQ** -- The function run when the software interrupt occurs.  In most cases this is driven by a configurable timer but there are platforms that use it differently.
 
-HLAKit 6502 preprocessor supports directives that assign different functions to the interrupts.  In the final binary, pointers to the function will be stored in the proper memory locations for the interrupts.
+The HLAKit 6502 preprocessor supports directives that assign different functions to the interrupts.  In the final binary, pointers to the function will be stored in the proper memory locations for the interrupts.
 
 ==Vector Declarations==
 
