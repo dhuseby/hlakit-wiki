@@ -1,0 +1,50 @@
+=Variable Manipulators=
+
+
+The variable manipulator keywords are used at variable declaration and can change the use and properties of a variable.
+
+===typedef===
+
+The typedef keyword creates a variable type/struct skeleton. A variable with the typedef keyword does not actually declare a variable which takes up space in ROM or RAM, only a new type. The new variable type can then be used like a standard variable type.
+
+====Examples====
+{{{
+#!c
+// defines a new variable type INT of the byte type
+typedef byte INT
+INT myNewIntVariable
+
+// defines a new variable type OAM_ENTRY of a struct
+typedef struct OAM_ENTRY 
+{
+    BYTE y
+    BYTE tile
+    BYTE attributes
+    BYTE x
+}
+OAM_ENTRY oament
+...
+assign(oament.tile, #123)
+}}}
+
+===shared===
+
+The shared keyword is used exclusively for warning messages. If you turn the warning level up to "2" or higher, it will warn you if a variable is accessed in both interrupts and functions, unless of course, it's declared as a shared variable. This is handy to prevent certain variables from being hijacked during an interrupt execution.
+
+====Examples====
+{{{
+#!c
+shared byte varForInterruptsAndFunctions
+}}}
+
+===':' (address specifier)===
+
+The ':' operator on variable declarations allows you to manually specify the exact location of the variable. It is useful for cases such as registers.
+
+====Examples====
+{{{
+#!c
+BYTE PPU_CNT0      :$2000
+BYTE SPR_DMA       :$4014
+BYTE PPU_IO        :$2007
+}}}
