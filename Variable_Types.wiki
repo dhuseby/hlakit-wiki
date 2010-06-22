@@ -27,19 +27,19 @@ The ##typedef## keyword is used to define a new type alias.
 {{{
 #!c
 // standard type alias
-typedef [shared] type alias
+typedef type alias
 
 // array type alias
-typdef [shared] type alias[size]
+typedef type alias[size]
 
 // struct type alias
-typedef [shared] struct label
+typedef struct label
 {
     // struct members
 } alias
 }}}
 
-This is exactly like the way the C language creates alias with the ##typedef## keyword.  The only difference here is the ##shared## keyword which is discussed in detail in [[Variable Manipulators]].
+This is exactly like the way the C language creates alias with the ##typedef## keyword.
 
 ====Examples====
 {{{
@@ -48,8 +48,8 @@ This is exactly like the way the C language creates alias with the ##typedef## k
 typedef byte INT
 INT intVar  // this is a byte
 
-typdef shared pointer LIST
-LIST pInterestList // shared pointer variable
+typdef pointer LIST
+LIST pInterestList // pointer variable
 
 // array type alias
 typedef byte buffer[32]
@@ -75,7 +75,7 @@ The ##struct## keyword is used to create new types that are structured container
 ====The Syntax====
 {{{
 #!c
-[shared] struct label
+struct label
 {
     type label[, label, ...]
 }
