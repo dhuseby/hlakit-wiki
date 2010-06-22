@@ -123,7 +123,9 @@ struct scrollEvent
 }
 }}}
 
-As you can see, the syntax is nearly the same as C.  The most obvious exception is the lack of semicolons.  When referencing struct members in your code you use dotted notation.
+Struct members can be arrays but they must have a size specified.
+
+When referencing struct members in your code you use dotted notation.
 
 ====Examples====
 {{{
