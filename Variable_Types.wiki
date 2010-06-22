@@ -39,3 +39,4 @@ typedef [shared] struct label
 } alias
 }}}
 
+This is exactly like the way the C language creates alias with the ##typedef## keyword.  The only difference here is the ##shared## keyword which is discussed in detail in [[Variable Manipulators]].
