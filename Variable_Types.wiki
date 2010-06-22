@@ -36,6 +36,12 @@ typedef struct label
 {
     // struct members
 } alias
+
+// array of structs type alias
+typedef struct label
+{
+    // struct members
+} alias[<size>]
 }}}
 
 This is exactly like the way the C language creates alias with the ##typedef## keyword.
