@@ -23,7 +23,7 @@ The HLAKit language only supports defining new types using the ##typedef## and #
 
 The ##typedef## keyword is used to define a new type alias.
 
-====##typedef## Syntax====
+====The Syntax====
 {{{
 #!c
 // standard type alias
