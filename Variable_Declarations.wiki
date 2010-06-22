@@ -1,5 +1,7 @@
 =Variable Declarations=
 
+The HLAKit language supports named variables to make coding easier.  Variables are defined as instances of a specific type and can be assigned to a specific memory location and an initial value.
+
 ====The Syntax====
 {{{
 #!c
