@@ -14,3 +14,28 @@ It is important to note that the **dword** and the 32-bit **pointer** types are 
 |dword|4|0 to 4294967295|32 bit integer|32 bit CPU's only|
 |pointer|2/4|0x0000 to 0xFFFF 8/16 bit\\ 0x00000000 to 0xFFFFFFFF 32 bit|16/32 bit address pointer integer|32 bit pointers on 32-bit CPU's only|
 |struct|-|-|A collection of variables and data||
+
+==Defining Types==
+
+The HLAKit language only supports defining new types using the ##typedef## and ##struct## keywords.  Both ##typedef## and ##struct## keywords work exactly like they do in the C language.
+
+===The ##typedef## Keyword===
+
+The ##typedef## keyword is used to define a new type alias.
+
+====##typedef## Syntax====
+{{{
+#!c
+// standard type alias
+typedef [shared] type alias
+
+// array type alias
+typdef [shared] type alias[size]
+
+// struct type alias
+typedef [shared] struct label
+{
+    // struct members
+} alias
+}}}
+
