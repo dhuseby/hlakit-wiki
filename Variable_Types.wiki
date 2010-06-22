@@ -41,10 +41,10 @@ typedef struct label
 typedef struct label
 {
     // struct members
-} alias[<size>]
+} alias[size]
 }}}
 
-This is exactly like the way the C language creates alias with the ##typedef## keyword.
+This is exactly like the way the C language creates alias with the ##typedef## keyword.  Note that the size in the array typedef expressions is optional.  However, if no size is given, all instances of the aliased type must have initializers so that the compiler can correctly calculate the size of each variable instance.
 
 ====Examples====
 {{{
