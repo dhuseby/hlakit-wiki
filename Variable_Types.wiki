@@ -40,3 +40,101 @@ typedef [shared] struct label
 }}}
 
 This is exactly like the way the C language creates alias with the ##typedef## keyword.  The only difference here is the ##shared## keyword which is discussed in detail in [[Variable Manipulators]].
+
+====Examples====
+{{{
+#!c
+// standard type aliases
+typedef byte INT
+INT intVar  // this is a byte
+
+typdef shared pointer LIST
+LIST pInterestList // shared pointer variable
+
+// array type alias
+typedef byte buffer[32]
+buffer myBuf // array of 32 bytes
+
+// struct type alias
+typedef struct player_
+{
+    byte x, y
+    byte health
+    byte experience
+    pointer inventory
+} player
+player me // struct player variable
+}}}
+
+Normally, if you do not typedef a ##struct## type you have to declare variables using the full ##struct foo## type.  In the example above, the type ##struct player_## has been aliased as ##player## using ##typedef##.  From that point on, you can declare new variables using just ##player## instead of ##struct player_##.
+
+==The ##struct## Keyword==
+
+The ##struct## keyword is used to create new types that are structured containers of named members.  Structs can contain any number of members of any valid type, including other structs.
+
+====The Syntax====
+{{{
+#!c
+[shared] struct label
+{
+    type label[, label, ...]
+}
+}}}
+
+Note that the type of the struct member can be any basic type or any already declared struct type.
+
+====Examples====
+{{{
+#!c
+// standard struct declare
+struct time
+{
+    byte ticks
+    byte seconds
+    byte minutes
+    byte hours
+}
+
+// struct declared with member list
+struct scrollTo
+{
+    byte flags
+    word x, y
+}
+
+// struct declared with member struct
+struct player
+{
+    byte sprite
+    byte joypad
+    struct move
+    {
+        byte x, y
+        byte amount
+    } move
+    byte anArray[10]
+}
+
+// a struct with two previously defined structs as members
+struct scrollEvent
+{
+    struct scrollTo to
+    struct time when
+}
+}}}
+
+As you can see, the syntax is nearly the same as C.  The most obvious exception is the lack of semicolons.  When referencing struct members in your code you use dotted notation.
+
+====Examples====
+{{{
+#!c
+struct scrollEvent evt
+
+// load the ticks into the X reg
+ldx evt.when.ticks
+
+struct player p
+
+// store X reg into player array at index 2
+stx p.anArray,2
+}}}
