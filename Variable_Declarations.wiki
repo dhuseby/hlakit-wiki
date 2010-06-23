@@ -88,6 +88,8 @@ shared struct time stamps[] : 0x0200 =
 
 In the above example, the variable named ##stamps## is an array of time structs that will be located at 0x0200 in the current bank and will be initialized as an array with three time struct values.  The size of the array is does not have to be supplied because it can be calculated by the compiler.
 
+===Variable Assignment===
+
 Variable array initializations can contain labels that reference specific locations in the array.  This is useful for hand tailoring access to arrays.
 
 ====Example====
