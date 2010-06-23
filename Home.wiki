@@ -72,6 +72,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * [[Compiler Options]]
 
+* [[Differences Between HLAKit and NESHLA]]
+
 * Target Machines
 ** 6502
 *** Atari Lynx
