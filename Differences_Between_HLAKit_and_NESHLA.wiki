@@ -1,0 +1,7 @@
+=Differences=
+
+There are a few of subtle differences between the NESHLA language and the HLAKit language.  This page details those differences so that you can port your NESHLA code over to HLAKit.
+
+==The ##sizeof## Keyword==
+
+In NESHLA, there existed a ###sizeof## keyword that replaced itself with the size of the parameter.  In HLAKit the # has been dropped to make it a keyword like ##typedef##, ##struct##, and ##shared##.
