@@ -2,9 +2,9 @@
 
 ==Integers==
 
-The NESHLA compiler supports a number of different types of immediate integer declarations. The types are as follows:
+The HLAKit compiler supports a number of different types of immediate integer declarations. The types are as follows:
 
-|=Operator|=Description|=Examples|
+|=Type|=Description|=Examples|
 |decimal|A normal number.|123, 1234, 128, 255|
 |kilo|The number preceding the "K" is multiplied by 1024. For example, 32K is 32768.|1K, 2K, 4K, 32K|
 |hex (C style)|Hexadecimal numbers in the "0x" C style.|0x0123, 0x1234, 0x80, 0xFF|
@@ -42,8 +42,6 @@ The arithmatic operators and keywords perform integer arithmatic operations. The
 |=Operator|=Description|=Example|
 |lo|Lo byte of word|lo(0x1234) (results in 0x34)|
 |hi|Hi byte of word|hi(0x1234) (results in 0x12)|
-|nylo|Lo nybble of byte|nylo(0x12) (results in 0x02)|
-|nyhi|Hi nybble of byte|nyhi(0x12) (results in 0x01)|
 |sizeof|Size of Variable|sizeof(word) (results in 2)|
 
 ====Examples====
@@ -54,13 +52,13 @@ byte oamaddrs[] = {$00*4, $08*4, $10*4, $18*4}
 
 // code with an arithmatic sizeof keyword
 clc
-adc #sizeof(SPR_OBJ)
+adc sizeof(SPR_OBJ)
 
 // use of the lo and hi keywords on an immediate integer passed as a macro param
 inline jsrind_imd(pproc)
 {
-    lda #lo(pproc)
-    ora #hi(pproc)
+    lda lo(pproc)
+    ora hi(pproc)
     if(not zero) 
     {
         assign_16i(_jsrind_temp, pproc)
@@ -68,15 +66,4 @@ inline jsrind_imd(pproc)
     }
 }
 
-// use of the lo and hi keywords on a pointer variable passed as a macro param
-inline jsrind(pproc)
-{
-    lda pproc + 0
-    ora pproc + 1
-    if(not zero) 
-    {
-        assign_16_16(_jsrind_temp, pproc)
-        jsrind_f()
-    }
-}
 }}}
