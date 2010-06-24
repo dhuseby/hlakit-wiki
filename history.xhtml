@@ -14,32 +14,17 @@
                 <img id="tr" alt="" width="8" height="8" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGCRAhC4pSQNgAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAZUlEQVQY03XMsQ2AMBAEwYPIdVj0QWmUQQtQBjkl8KkLsIN3tiQgGQQrXTa6zsx2SUeMcS6lbHoH4O6YGcAEjDln3RNNF1xa9AB3LfoE7g4w/YLrBWDsAPRRrVUppbXXTyEESRpO/A6kHmxC4cUAAAAASUVORK5CYII=" />
             </div>
             <div class="clear" />
-            <form action="${uri}" method="post">
-                <div class="tools">
-                    <p>
-                    <a id="home" href="${home}"><img alt="Home" width="11" height="10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGGA8YObPeSFUAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAP0lEQVQY05WQQQoAQAgC1Zf3891rhAZ5CptQAoyq6rlZCeyQhRtId6AFJFJHFzt33KKnJxeXPOGgE8z0U1fjA+v3Mwkz6VdnAAAAAElFTkSuQmCC" /></a>
-                    <a id="back" href="${uri}">Back</a>
-                    <a id="delete" class="right" href="${uri}/delete">Delete</a>
-                    <a id="history" class="right" href="${uri}/history">History</a>
-                    </p>
-                </div>
-                <div class="body">
-                    <p>
-                    <h4>${title}</h4>
-                    <textarea name="content" cols="67" rows="45">${content}</textarea>
-                    </p>
-                    <p>
-                    <h4>Commit Message:</h4>
-                    <input name="msg" type="text" value="" />
-                    </p>
-                    <p>
-                    <input name="page" type="hidden" value="${page}" />
-                    <input name="command" type="hidden" value="edit" />
-                    <input name="Save" type="submit" value="Save" />
-                    <a id="cancel" href="${uri}">Cancel</a>
-                    </p>
-                </div>
-            </form>
+            <div class="tools">
+                <p>
+                <a id="home" href="${home}"><img alt="Home" width="11" height="10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGGA8YObPeSFUAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAP0lEQVQY05WQQQoAQAgC1Zf3891rhAZ5CptQAoyq6rlZCeyQhRtId6AFJFJHFzt33KKnJxeXPOGgE8z0U1fjA+v3Mwkz6VdnAAAAAElFTkSuQmCC" /></a>
+                <a id="back" href="${uri}">Back</a>
+                <a id="delete" class="right" href="${uri}/delete">Delete</a>
+                <a id="edit" class="right" href="${uri}/edit">Edit</a>
+                </p>
+            </div>
+            <div class="body">
+                <pre>${content}</pre>
+            </div>
             <div class="clear" />
             <div class="bottom">
                 <img id="bl" alt="" width="8" height="8" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGCRAiADatypMAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAX0lEQVQY032NMRGAMADEHva6wEf1oAI74AIBSOA7VsAv7fZMZQBK5lwCkod/GAGctVZ0sR1JdguQBNtLKaW7AIA957x9LiS1SiS5Pku30CTbC0k3cZD0qoYQYkppBjBdDq6hGpaEAKcAAAAASUVORK5CYII=" />
