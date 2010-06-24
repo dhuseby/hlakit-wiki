@@ -101,7 +101,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** ARM7TDMI
 *** Nintendo Game Boy Advance
 
-
 * Target Code Libraries
 ** 6502
 *** [[std.h]]
