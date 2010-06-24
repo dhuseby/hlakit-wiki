@@ -7,7 +7,7 @@ The HLAKit compiler supports a number of different types of immediate integer de
 |=Type|=Description|=Examples|
 |decimal|A normal number.|123, 1234, 128, 255|
 |kilo|The number preceding the "K" is multiplied by 1024. For example, 32K is 32768.|1K, 2K, 4K, 32K|
-|hex (C style)|Hexadecimal numbers in the "0x" C style.|0x0123, 0x1234, 0x80, 0xFF|
+|hex (C&nbsp;style)|Hexadecimal numbers in the "0x" C style.|0x0123, 0x1234, 0x80, 0xFF|
 |hex ($ style)|Hexadecimal numbers in the "$" ASM/Pascal style.|$0123, $1234, $80, $FF|
 |binary|Binary integers are preceded with a "%" character.|%10011010, %01001011|
 
