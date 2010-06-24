@@ -9,6 +9,7 @@ The HLAKit compiler is implemented in Python and uses the pyparsing module to ha
 
 Why do this?  An HLA language gives a nice balance between structured programming and assembly language.  It allows you to program using functions, structs, named variables, if-else blocks and loops while still preserving precise, cycle-counted control over the machine.  Unlike C, the HLA understood by the HLAKit compiler uses assembly for the body of functions.  When you are coding for old, 8-bit and 16-bit computers that have precise timing requirements, assembly language is the only way to be sure you are getting the most out of the machine.
 
+
 ==Contents==
 
 * [[FAQ]]
