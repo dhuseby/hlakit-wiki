@@ -47,7 +47,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Variable Manipulators|Manipulators]]
 
 * Function Declaration and Use
-** [[Function Declaration and Use|Introduction]]
 ** [[Function Declaration and Use|Declaring Functions]]
 ** [[Function Declaration and Use|return and noreturn]]
 ** [[Function Declaration and Use|Parameters]]
@@ -55,7 +54,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Function Declaration and Use|Calling Functions]]
 
 * Integers and Arithmetic Operations
-** [[Integers and Arithmetic Operations|Introduction]]
 ** [[Integers and Arithmetic Operations|Integers]]
 ** [[Integers and Arithmetic Operations|Arithmetic Operations]]
 *** [[Integers and Arithmetic Operations|Operators]]
@@ -63,7 +61,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 *** [[Integers and Arithmetic Operations|Examples]]
 
 * Conditional Statements
-** [[Conditional Statements|Introduction]]
 ** [[Conditional Statements|If Statements]]
 ** [[Conditional Statements|While Statements]]
 ** [[Conditional Statements|Do While Statements]]
