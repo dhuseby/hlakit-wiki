@@ -12,7 +12,7 @@ Defines can be used with the conditional preprocessor define directives as well 
 
 ====Examples====
 {{{
-#!hlakit
+#!c
 // defining boolean true/false integers
 #define TRUE  1
 #define FALSE 0
