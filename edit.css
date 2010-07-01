@@ -1,4 +1,4 @@
-body { background-color: #747980; /*#e7f1ff;*/ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGCQ84OLn4bJsAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAEtJREFUKM+V0SEOACEMRNFfZBX3P+Wq0TgSAsnOVDbvp6LFYyTN1767v0owQCX4CBy8AxcDVIIBRoIlzZHg68IfPgIH78DF1+OcJy4IlS8EGnBm5QAAAABJRU5ErkJggg==');  padding: 65px 0; text-align: center; font-family: Arial, Helvetica, sans-serif; }
+body { background-color: #747980; /*#e7f1ff;*/ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oGCQ84OLn4bJsAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAEtJREFUKM+V0SEOACEMRNFfZBX3P+Wq0TgSAsnOVDbvp6LFYyTN1767v0owQCX4CBy8AxcDVIIBRoIlzZHg68IfPgIH78DF1+OcJy4IlS8EGnBm5QAAAABJRU5ErkJggg==');  padding: 65px 0; text-align: center; font-family: "Gill Sans", "Gill Sans MT", Arial, Helvetica, sans-serif; }
 a, a:hover { color: #185787; }
 li { list-style: none; }
 li li { list-style: circle; }
