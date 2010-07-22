@@ -59,11 +59,11 @@ function noreturn do_game()
 
 ==Parameters==
 
-Because NESHLA is an assembler and not a high level language such as C compiler, standard and interrupt functions can not use parameters. Parameters can only be used on inline (macro) functions.
+Because HLAKit is an assembler and not a high level language such as C, subroutine and interrupt functions can not use parameters. Parameters can only be used on inline (macro) functions.
 
-NESHLA supports an unlimited amount of parameters, and they can be labeled anything using alphanumeric characters and underscores.
+HLAKit supports an unlimited amount of parameters, and they can be labeled anything using alphanumeric characters and underscores.
 
-====Example====
+====Example Macro with Parameters====
 {{{
 #!c
 inline assign(dest,value)
