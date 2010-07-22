@@ -22,11 +22,37 @@ It should be noted that parameters are only available for **//inline//** macro f
 ====A Simple Subroutine====
 {{{
 #!c
-function Foo()
+function foo()
 {
-    
+    lda 0x0200,x
+    inx
+    ora 0x0200,x
+    if(not zero) {
+        return
+    }
+    inx
+    return
 }
 }}}
+
+====A Simple Macro====
+{{{
+#!c
+inline jsrind_x(pproc)
+{
+    lda pproc+0,x
+    ora pproc+1,x
+    if (not zero) {
+        x_assign_16_16(_jsrind_temp, pproc)
+        jsrind_f()
+    }
+}
+}}}
+
+====A Simple Interrupt Handler====
+{{{
+#!c
+interrupt
 
 ===The "return" Keyword===
 
