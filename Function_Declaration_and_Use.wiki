@@ -29,7 +29,8 @@ function foo()
     lda 0x0200,x
     inx
     ora 0x0200,x
-    if(not zero) {
+    if(zero) 
+    {
         return
     }
     inx
@@ -39,11 +40,22 @@ function foo()
 
 ===The "noreturn" Keyword===
 
-With normal subroutine and interrupt functions the return from subroutine/interrupt instructions are automatic. Each function block is automatically terminated with the appropriate opcode.
+The **//noreturn//** keyword will instruct the compiler to not include the return from subroutine/interrupt opcode in subroutine/interrupt functions.  It can be used to save space when a function ends in a "JMP" or infinite loop, for example.
 
-The **noreturn** keyword will place the correct return opcode in your code depending on the function type. By using this keyword instead of the actual "RTS" and "RTI" opcodes, the code looks cleaner, and functions can easily be changed from standard to interrupt and vice vera without code modification. As well, macros can contain code which returns, and be used on both interrupts and standard functions.
-
-The noreturn keyword disables the automatic "RTS" and "RTI" opcodes on functions. It can be used to save space when a function ends in a "JMP" or infinite loop, for example.
+====A "noreturn" Subroutine====
+{{{
+#!c
+function noreturn do_game()
+{
+    forever
+    {
+        do_sound()
+        do_input()
+        do_graphics()
+        tick()
+    }
+}
+}}}
 
 ====Examples====
 {{{
