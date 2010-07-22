@@ -52,7 +52,11 @@ inline jsrind_x(pproc)
 ====A Simple Interrupt Handler====
 {{{
 #!c
-interrupt
+interrupt do_something()
+{
+    inx
+}
+}}}
 
 ===The "return" Keyword===
 
