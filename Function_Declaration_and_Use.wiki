@@ -57,41 +57,6 @@ function noreturn do_game()
 }
 }}}
 
-====Examples====
-{{{
-#!c
-// A sample function using the return keyword
-function SprOAM_FindFree()
-{
-    ldy #0
-    lda [sprchk.addr], y // first byte is size
-    tax
-    do 
-    {
-        iny
-        lda [sprchk.addr], y // each following byte is the oam index
-        if(zero) 
-        {
-            return // returns REG.Y as the free index
-        }
-        dex
-    } while(not zero)
-
-    lda #1
-}
-
-// A start interrupt, since it ends with an infinite loop, there is no need for an RTS
-interrupt.start noreturn main()
-{
-    // initialize game
-    forever 
-    {
-        // do game  
-    }
-}
-}}}
-
-
 ==Parameters==
 
 Because NESHLA is an assembler and not a high level language such as C compiler, standard and interrupt functions can not use parameters. Parameters can only be used on inline (macro) functions.
