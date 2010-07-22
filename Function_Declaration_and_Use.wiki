@@ -2,7 +2,7 @@
 
 ==Declaring Functions==
 
-Functions can be declared as standard subroutine Function functions, Interrupt functions, and Inline functions (macros).
+HLAKit supports the declaration of functions to help organize your code into manageable chunks.  This is part of what makes it a high level assembler.  Below is the syntax for declaring functions:
 
 ====The Syntax====
 {{{
@@ -12,6 +12,10 @@ type [noreturn] label([parameter0, parameter1, ... (inline only)])
     // body
 }
 }}}
+
+===The type of a Function===
+
+HLAKit functions can be declared with one of three types: function, inline, or interrupt.
 
 ===return and noreturn===
 
