@@ -7,7 +7,7 @@ HLAKit supports the declaration of functions to help organize your code into man
 ====The Syntax====
 {{{
 #!c
-<function | inline | interrupt[.intr_name]> [noreturn] label([parameter0, parameter1, ... (inline only)])
+type [noreturn] label([parameter0, parameter1, ... (inline only)])
 {
     // body
 }
