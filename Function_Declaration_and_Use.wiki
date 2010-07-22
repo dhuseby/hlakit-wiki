@@ -15,7 +15,7 @@ type [noreturn] label([parameter0, parameter1, ... (inline only)])
 
 ===The Type of a Function===
 
-HLAKit functions can be declared with one of three types: function, inline, or interrupt.  Functions declared with "function" are standard subroutines that end with a "return from subroutine" instruction (e.g. RTS on 6502).  Functions declared with "inline" are macros that are compiled inline with the calling code and do not contain a return instruction. Functions declared with "interrupt" are subroutines that end in a "return from interrupt handler" instruction (e.g. RTI on 6502).
+HLAKit functions can be declared with one of three types: function, inline, or interrupt.  Functions declared with **//function//** are standard subroutines that end with a "return from subroutine" instruction (e.g. RTS on 6502).  Functions declared with "inline" are macros that are compiled inline with the calling code and do not contain a return instruction. Functions declared with "interrupt" are subroutines that end in a "return from interrupt handler" instruction (e.g. RTI on 6502).
 
 ===The "return" Keyword===
 
