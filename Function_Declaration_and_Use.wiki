@@ -13,15 +13,19 @@ type [noreturn] label([parameter0, parameter1, ... (inline only)])
 }
 }}}
 
-===The type of a Function===
+===The Type of a Function===
 
 HLAKit functions can be declared with one of three types: function, inline, or interrupt.  Functions declared with "function" are standard subroutines that end with a "return from subroutine" instruction (e.g. RTS on 6502).  Functions declared with "inline" are macros that are compiled inline with the calling code and do not contain a return instruction. Functions declared with "interrupt" are subroutines that end in a "return from interrupt handler" instruction (e.g. RTI on 6502).
 
-===return and noreturn===
+===The "return" Keyword===
 
-With the function typecasting feature, the "RTS" and "RTI" opcodes are automatic. Each function block is automatically terminated with the appropriate opcode.
+With normal subroutine and interrupt functions, the generation of the return from subroutine/interrupt opcodes are automatic.  However, HLAKit also supports the **return** keyword that can be used to exit a function early or to explicitly define the return from subroutine/interrupt opcode.  Including the **return**
 
-The return keyword will place the correct return opcode in your code depending on the function type. By using this keyword instead of the actual "RTS" and "RTI" opcodes, the code looks cleaner, and functions can easily be changed from standard to interrupt and vice vera without code modification. As well, macros can contain code which returns, and be used on both interrupts and standard functions.
+===The "noreturn" Keyword===
+
+With normal subroutine and interrupt functions the return from subroutine/interrupt instructions are automatic. Each function block is automatically terminated with the appropriate opcode.
+
+The **noreturn** keyword will place the correct return opcode in your code depending on the function type. By using this keyword instead of the actual "RTS" and "RTI" opcodes, the code looks cleaner, and functions can easily be changed from standard to interrupt and vice vera without code modification. As well, macros can contain code which returns, and be used on both interrupts and standard functions.
 
 The noreturn keyword disables the automatic "RTS" and "RTI" opcodes on functions. It can be used to save space when a function ends in a "JMP" or infinite loop, for example.
 
