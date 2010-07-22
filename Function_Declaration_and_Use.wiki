@@ -21,7 +21,7 @@ HLAKit functions can be declared with one of three types: function, inline, or i
 
 With normal subroutine and interrupt functions, the generation of the return from subroutine/interrupt opcodes are automatic.  However, HLAKit also supports the **//return//** keyword that can be used to exit a function early or to explicitly define the return from subroutine/interrupt opcode.  Including the **//return//** keyword in your functions makes them a little cleaner but it is not required.
 
-====A Simple Subroutine With "return" Keyword====
+====A Subroutine with "return" Keyword====
 {{{
 #!c
 function foo()
