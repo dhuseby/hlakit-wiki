@@ -74,7 +74,7 @@ inline assign(dest,value)
 
 ==Interrupt Type Declaring==
 
-Interrupt functions can optionally be declared with their subtype (start, nmi, irq). This does not automatically make them the function pointed to by the interrupt vector, but rather is used exclusively for error messages. If you define a interrupt as a certain type, then define it to a different interrupt vector, you will get an error. This is handy to prevent the accidental misuse of interrupts.
+Interrupt functions can optionally be declared with a platform-specific subtype (e.g **//start//**, **//nmi//**, or **//irq//** for the Nintendo Entertainment System 6502). This does not automatically make them the function pointed to by the interrupt vector, but rather is used exclusively for error messages. If you define an interrupt as a certain type, then define it to a different interrupt vector, you will get an error. This is handy to prevent the accidental misuse of interrupts.
 
 ====Example====
 {{{
@@ -98,7 +98,7 @@ interrupt vblank()
 
 ==Calling Functions==
 
-Functions can simply be called by their name as they are in high level languages. It will automatically use the correct jump opcode or insert the code (in the case of inline functions). Standard functions will have the "JSR" opcode for calling, while interrupts will be called with the "JMP" opcode. It addition, it will help prevent errors in your code, such as using a standard subroutine for an interrupt by mistake.
+Functions can simply be called by their name as they are in high level languages. It will automatically use the correct jump opcode or insert the code (in the case of **//inline//** functions). Standard functions will have the "jump to subroutine" opcode (e.g. JSR on 6502), while interrupts will be called with the jump opcode (e.g. JMP on 6502). It addition, it will help prevent errors in your code, such as using a standard subroutine for an interrupt by mistake.
 
 ====Example====
 {{{
