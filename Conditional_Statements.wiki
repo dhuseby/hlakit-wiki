@@ -2,7 +2,7 @@
 
 One of the most useful features of the NESHLA language is the ability to use conditional statements. They simplify and speed up coding, greatly enhance code readability, and eleviate the need for labels, creating structured code.
 
-The majority of conditional branches in assembly language tend to be straight forward jumps calling for useless labels. The labels names are irrelivant, and cause the code to loose structure and become tedious. However, NESHLA supports if, else, while, do while, forever and switch/case expressions! Written in as "while(no carry) {" and such, they do not impeade the assembly language in any form, or make the code any less efficient than manual branch opcodes+labels.
+The majority of conditional branches in assembly language tend to be straight forward jumps calling for useless labels. The labels names are irrelivant, and cause the code to lose structure and become tedious. However, NESHLA supports if, else, while, do while, forever and switch/case expressions! Written in as "while(no carry) {" and such, they do not impeade the assembly language in any form, or make the code any less efficient than manual branch opcodes+labels.
 
 The keywords near and far can be used as well. The 6502 only allows conditional branches to use 8 bit operands, so the jumps can only be within -128 and +127 of the opcode. Normally to overcome this, one would then need to create an extra label, use the opposite comparitive branch, and then write in an absolute jump. This adds to unnecessary tedious coding. NESHLA allows the use of conditional branches with 16 bit operands, and automatically writes the extra code!
 
