@@ -22,6 +22,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** Target Specific
 *** 6502
 **** [[Preprocessor 6502 Interrupt Vectors|Interrupt Vectors]]
+**** Atari 5200 SuperSystem
+**** Atari 7800 ProSystem
 **** Atari Lynx
 ***** [[Preprocessor Lynx LNX Header|.lnx Header]]
 ***** [[Preprocessor Lynx Encrypted Loader|Encrypted Loader]]
@@ -29,6 +31,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[Preprocessor iNES Header|iNES Header]]
 ***** [[Preprocessor NES CHR Banks|CHR Banks]]
 **** Apple II
+*** 6507
+**** Atari 2600
 *** Sharp LR35902 Z80
 **** Nintendo Game Boy
 *** Zilog Z80
