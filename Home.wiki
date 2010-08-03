@@ -22,6 +22,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** Target Specific
 *** 6502
 **** [[Preprocessor 6502 Interrupt Vectors|Interrupt Vectors]]
+**** Apple II
 **** Atari 5200 SuperSystem
 **** Atari 7800 ProSystem
 **** Atari Lynx
@@ -30,7 +31,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 **** Nintendo Entertainment System
 ***** [[Preprocessor iNES Header|iNES Header]]
 ***** [[Preprocessor NES CHR Banks|CHR Banks]]
-**** Apple II
 *** 6507
 **** Atari 2600
 *** ARM7TDMI
@@ -77,6 +77,9 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 
 * Target Machines
 ** 6502
+*** Apple II
+*** Atari 5200 SuperSystem
+*** Atari 7800 ProSystem
 *** Atari Lynx
 *** Nintendo Entertainment System__
 **** [[NES Programming FAQ and Important Pointers]]
@@ -92,18 +95,19 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ****** [[nes_mappers.h]]
 ****** [[nes_system.h]]
 ****** [[nes_video.h]]
-*** Apple II
+** 6507
+*** Atari 2600
+** ARM7TDMI
+*** Nintendo Game Boy Advance
+** Motorola 68000
+*** Sega Genesis
+*** Sega Nomad
+*** Neo Geo AES
 ** Sharp LR35902 Z80
 *** Nintendo Game Boy
 ** Zilog Z80
 *** Sega Master System
 *** Sega Game Gear
-** Motorola 68000
-*** Sega Genesis
-*** Sega Nomad
-*** Neo Geo AES
-** ARM7TDMI
-*** Nintendo Game Boy Advance
 
 * Target Code Libraries
 ** 6502
@@ -119,7 +123,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ***** [[std_memory.h]]
 **** [[std_palette.as]]
 **** [[std_stack.h]]
+** 6507
+** ARM7TDMI
+** Motorola 68000
 ** Sharp LR35902 Z80
 ** Zilog Z80
-** Motorola 68000
-** ARM7TDMI
