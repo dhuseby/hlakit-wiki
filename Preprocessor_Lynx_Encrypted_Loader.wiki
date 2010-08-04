@@ -13,9 +13,9 @@ The HLAKit Lynx Platform code supports designating a loader function that gets w
 #!c
 #lynx.loader loader
 
-function loader() 
+function load_my_game() 
 {
-    // loader code
+    // code to load your game into RAM
 }
 }}}
 
