@@ -21,7 +21,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 ** [[Preprocessor Padding|Padding]]
 ** Target Specific
 *** 6502
-**** Generic
+**** Generic (Common to all 6502 machines)
 ***** [[Preprocessor 6502 Interrupt Vectors|Interrupt Vectors]]
 **** Apple II
 **** Atari 5200 SuperSystem
