@@ -28,3 +28,6 @@ By using the #lynx.loader directive, HLAKit will compile your loader function in
 There is a caveat here.  I wouldn't do to much in your loader function other than load in your main executable and jump to it.  To do anything else like show a graphic and/or play music you will likely call library functions to do that.  Since the entire loader has to be encrypted, the library functions have to be included in the binary image that gets encrypted, thus duplicating the library function you use in the resulting binary.
 
 My general strategy is to write a loader function that is the bare minimum needed to load in the main executable so that the encrypted loaded binary is as small and fast as possible.
+
+==A Two Stage Loader==
+
