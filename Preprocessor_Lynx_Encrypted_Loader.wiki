@@ -29,5 +29,10 @@ There is a caveat here.  I wouldn't do to much in your loader function other tha
 
 My general strategy is to write a loader function that is the bare minimum needed to load in the main executable so that the encrypted loaded binary is as small and fast as possible.
 
-==A Two Stage Loader==
+==Thoughts on Lynx Loader Design==
 
+If you want your main executable function for your game to be located at a specific location in RAM, such as in the zero page or at $0200, you will need to use a two-stage loader processes because of the encryption system and the way it works.
+
+As described above, the Lynx ROM code is hard coded to decrypt the first block of data to $0200 and then jump to it.  If you want your game's main loop function to be located at $0200 you have two options:
+# To designate your game's main function as the loader function using the #lynx.loader preprocessor directive.
+# To use a two-stage loader so that the first stage gets you past the encryption and loads the second stage in zero page or way up in RAM and can then load your game's main function into to $0200 or your desired location before executing it.
