@@ -13,7 +13,7 @@ The HLAKit compiler supports a number of different types of immediate integer de
 
 ==Arithmatic Operations==
 
-The arithmatic operators and keywords perform integer arithmatic operations. They can be used with addresses, variable addresses, and anywhere else an immediate integer can be placed. Multiple operators and keywords can be used together, and brackets can be used along them to define more specific operations.
+The arithmatic operators and keywords perform integer arithmetic operations. They can be used with addresses, variable addresses, and anywhere else an immediate integer can be placed. Multiple operators and keywords can be used together, and parenthesis can be used to define precedence.  Below is a list of all supported operators in precedence order.
 
 == Operators ==
 
