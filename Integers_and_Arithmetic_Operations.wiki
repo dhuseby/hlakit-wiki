@@ -44,8 +44,8 @@ The arithmatic operators and keywords perform integer arithmetic operations. The
 ==Keywords==
 
 |=Operator|=Description|=Example|
-|lo|Low byte of word|lo(0x1234) (results in 0x34)|
-|hi|High byte of word|hi(0x1234) (results in 0x12)|
+|lo|Low byte of word|lo(0x1234) (results in 0x34)\\This is the same as (0x1234 & 0x00FF)|
+|hi|High byte of word|hi(0x1234) (results in 0x12)\\This is the same as ((0x1234 & 0xFF00) >> 8)|
 |nylo|Low nybble of a byte|nylo(0x12) (results in 0x02)|
 |nyhi|High nybble of a byte|nyhi(0x12) (results in 0x01)|
 |sizeof|Size of Variable|sizeof(word) (results in 2)|
