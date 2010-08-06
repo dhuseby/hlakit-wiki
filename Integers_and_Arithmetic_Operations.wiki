@@ -71,5 +71,4 @@ inline jsrind_imd(pproc)
         jsrind_f()
     }
 }
-
 }}}
