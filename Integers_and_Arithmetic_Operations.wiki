@@ -18,6 +18,8 @@ The arithmatic operators and keywords perform integer arithmatic operations. The
 == Operators ==
 
 |=Operator|=Description|=Example|
+|+|Positive Sign|+A|
+|-|Negative Sign|-B|
 |+|Add|A + B|
 |-|Subtract|A - B|
 |*|Multiply|A * B|
