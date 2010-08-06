@@ -20,24 +20,26 @@ The arithmatic operators and keywords perform integer arithmatic operations. The
 |=Operator|=Description|=Example|
 |+|Positive Sign|+A|
 |-|Negative Sign|-B|
-|+|Add|A + B|
-|-|Subtract|A - B|
+|!|Not|!A (results in 1 on true, 0 on false)|
+|~ |Binary Not|~ A (results in the inverted integer of A)|
 |*|Multiply|A * B|
 |/|Divide|A / B|
 |%|Modulo|A % B|
+|+|Add|A + B|
+|-|Subtract|A - B|
 |>>|Binary Shift Right|A >> B|
 |<<|Binary Shift Left|A << B|
-|^|Binary Exclusive OR|A ^ B|
-|&|Binary AND|A & B|
-|~||Binary OR|A ~| B|
-|~==|Boolean Equal To|A == B (results in 1 on true, 0 on false)|
-|!=|Boolean Not Equal To|A != B (results in 1 on true, 0 on false)|
-|>=|Boolean Greater Than or Equal To|A >= B (results in 1 on true, 0 on false)|
-|<=|Boolean Less Than or Equal To|A <= B (results in 1 on true, 0 on false)|
 |>|Boolean Greater Than|A > B (results in 1 on true, 0 on false)|
 |<|Boolean Less Than|A < B (results in 1 on true, 0 on false)|
-|!|Not|!A (results in 1 on true, 0 on false)|
-|~ |Binary Not|~ A (results in the inverted integer of A)|
+|>=|Boolean Greater Than or Equal To|A >= B (results in 1 on true, 0 on false)|
+|<=|Boolean Less Than or Equal To|A <= B (results in 1 on true, 0 on false)|
+|!=|Boolean Not Equal To|A != B (results in 1 on true, 0 on false)|
+|~==|Boolean Equal To|A == B (results in 1 on true, 0 on false)|
+|&|Binary AND|A & B|
+|^|Binary Exclusive OR|A ^ B|
+|~||Binary OR|A ~| B|
+
+
 
 ==Keywords==
 
