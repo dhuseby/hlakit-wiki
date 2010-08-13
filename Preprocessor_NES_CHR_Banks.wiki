@@ -17,3 +17,7 @@ The #chr.link keyword links binary files with CHR ROM data to the output NES ROM
 The first parameter, "filename", specifies the name of the file which contains the data.
 
 Optionally, you can specify the size of the desired CHR block with the second parameter, size. This will do two things. First, if the size of the CHR data is smaller than size, it will pad to size. Second, if the size of the CHR data is larger than size, it will give an error message preventing accidental block overflows.
+
+**#chr.end**
+
+The #chr.end keyword ends a CHR bank.
