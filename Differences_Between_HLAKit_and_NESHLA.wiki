@@ -2,3 +2,22 @@
 
 There are a few of subtle differences between the NESHLA language and the HLAKit language.  This page details those differences so that you can port your NESHLA code over to HLAKit.
 
+==6502 Indirect Addressing==
+
+In the old NESHLA compiler, the indirect addressing mode for the JMP instruction used square brackets around an address: 
+
+====NESHLA====
+{{{
+jmp [$FFFD]
+}}}
+
+But in HLAKit, the indirect addressing uses parenthesis around an address:
+
+====HLAKit====
+{{{
+jmp ($FFFD)
+}}}
+
+The parenthesis how almost every other 6502 assembler handles indirect addressing.
+
+
