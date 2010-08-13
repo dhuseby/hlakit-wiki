@@ -41,7 +41,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 **** Sega Nomad
 **** Neo Geo AES
 *** Sharp LR35902 Z80
-**** Nintendo Game Boy
+**** Nintendo Game Boy (Pocket)
+**** Nintendo Game Boy Color
 *** Zilog Z80
 **** Sega Master System
 **** Sega Game Gear
@@ -105,7 +106,8 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 *** Sega Nomad
 *** Neo Geo AES
 ** Sharp LR35902 Z80
-*** Nintendo Game Boy
+*** Nintendo Game Boy (Pocket)
+*** Nintendo Game Boy Color
 ** Zilog Z80
 *** Sega Master System
 *** Sega Game Gear
