@@ -13,7 +13,7 @@ The HLAKit Lynx Platform code supports designating a loader function that gets w
 #!c
 #lynx.loader load_my_game
 
-function load_my_game() 
+inline load_my_game() 
 {
 M1: bra 0       // self modifying bit, label for modification
     
