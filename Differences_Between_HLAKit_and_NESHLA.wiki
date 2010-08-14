@@ -2,6 +2,28 @@
 
 There are a few of subtle differences between the NESHLA language and the HLAKit language.  This page details those differences so that you can port your NESHLA code over to HLAKit.
 
+==Typedef Structs==
+
+In the old NESHLA compiler, it was possible to alias a struct by using a typedef like so:
+
+====NESHLA====
+{{{
+typedef struct foo {
+    ...
+}
+}}}
+
+And after the typedef, you'd be able to just use the name "foo" to refer to the struct foo type.  I wanted more congruence between HLAKit and C so I changed the way typedef aliasing worked for structs.  In HLAKit you must provide a trailing alias name like so:
+
+====HLAKit====
+{{{
+typedef struct foo_ {
+    ...
+} foo
+}}}
+
+This does the exact same thing as the old NESHLA typedef but it now makes all typedef's follow the same patter of typedef <type> <alias>.
+
 ==6502 Indirect Addressing==
 
 In the old NESHLA compiler, the indirect addressing mode for the JMP instruction used square brackets around an address: 
