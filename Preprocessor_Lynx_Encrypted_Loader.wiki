@@ -15,7 +15,11 @@ The HLAKit Lynx Platform code supports designating a loader function that gets w
 
 function load_my_game() 
 {
+M1: bra 0       // self modifying bit, label for modification
+    
     // code to load your game into RAM
+
+    // modify the branch target at M1
 }
 }}}
 
