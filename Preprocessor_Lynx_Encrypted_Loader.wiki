@@ -11,7 +11,7 @@ The HLAKit Lynx Platform code supports designating a loader function that gets w
 ====Example====
 {{{
 #!c
-#lynx.loader loader
+#lynx.loader load_my_game
 
 function load_my_game() 
 {
