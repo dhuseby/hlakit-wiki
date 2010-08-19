@@ -42,4 +42,22 @@ jmp ($FFFD)
 
 The parenthesis how almost every other 6502 assembler handles indirect addressing.
 
+==Variable Declaration==
+
+In the old NESHLA compiler, it was possible to use a comma delimited list of variable names with a single type identifier to declare a list of variables like so:
+
+====NESHLA====
+{{{
+byte fee, fi[2], fo, fum
+}}}
+
+In HLAKit, to simplify the parsing of variable declarations, you can no longer use a comma delimited list to define multiple variables.  Instead you have to use type + variable name pairs like so:
+
+====HLAKit====
+{{{
+byte fee
+byte fi[2]
+byte fo
+byte fum
+}}}
 
