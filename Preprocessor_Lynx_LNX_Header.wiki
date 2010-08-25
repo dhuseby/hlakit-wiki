@@ -4,6 +4,19 @@
 
 Preprocessor settings for specifying the block and bank size, as well as if the ROM has an EEPROM and what type it is.  Add a setting for specifying the initial value of AUDIOIN pin.
 
+**#lnx.page_size_bank0**
+
+**#lnx.page_size_bank1**
+
+**#lnx.version**
+
+**#lnx.cart_name**
+
+**#lnx.manufacturer_name**
+
+**#lns.rotation**
+
+
 ==Misc==
 
 **#lnx.off**
