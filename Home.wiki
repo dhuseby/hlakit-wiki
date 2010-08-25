@@ -115,7 +115,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 *** Sega Master System
 *** Sega Game Gear
 
-* Target Code Libraries
+* Target CPU Code Libraries
 ** 6502
 *** [[std.h]]
 **** [[std_assignment.h]]
