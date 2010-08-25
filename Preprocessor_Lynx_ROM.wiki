@@ -8,8 +8,8 @@ So when writing games for the Atari Lynx, we use the regular #ram.* preprocessor
 
 As for the Lynx ROM cart addressing, we have several new ROM preprocessor directives, nearly identical to the basic ROM directives except that they do not affect the #ram.* directives and only affect where the compiled code/data is located in the finished ROM image.
 
-**#lynx.rom.org <segment address> [, address counter] [, maxsize]**
+**#lynx.rom.org segmentaddress[, address counter][, maxsize]**
 
-**#lynx.rom.padding <value>**
+**#lynx.rom.padding value**
 
 **#lynx.rom.end**
