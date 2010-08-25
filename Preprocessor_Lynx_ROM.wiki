@@ -1,4 +1,4 @@
-=Lynx ROM=
+=ROM=
 
 Unlike pretty much every other 6502 based computer, the Atari Lynx does not access its cart ROM directly.  Instead it loads data from the cart ROM into RAM as needed through a couple of I/O registers.
 
