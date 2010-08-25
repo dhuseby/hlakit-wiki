@@ -8,8 +8,18 @@ So when writing games for the Atari Lynx, we use the regular #ram.* preprocessor
 
 As for the Lynx ROM cart addressing, we have several new ROM preprocessor directives, nearly identical to the basic ROM directives except that they do not affect the #ram.* directives and only affect where the compiled code/data is located in the finished ROM image.
 
+**#lynx.rom.bank banknumber**
+
+This sets the ROM bank number.  Currently all Lynx carts can have two banks: 0, and 1.  The valid values are 0 or 1.
+
 **#lynx.rom.org segmentaddress[, address counter][, maxsize]**
+
+This sets the Lynx ROM image segment address, address counter, and maxsize for the following data.  This allows compiled code and/or data to be placed anywhere in the ROM image.  The maxsize value is used to check assumptions.
 
 **#lynx.rom.padding value**
 
+This sets the value to use when filling in empty space in a ROM image.
+
 **#lynx.rom.end**
+
+This marks the end of a chunk of ROM data.  If you specify a maxsize value in the #lynx.rom.org directive, this lets the compiler know where the end is so that it can check to see if the chunk of ROM data is within the maxsize limit.
