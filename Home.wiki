@@ -29,6 +29,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 **** Atari Lynx
 ***** [[Preprocessor Lynx LNX Header|.lnx Header]]
 ***** [[Preprocessor Lynx Encrypted Loader|Encrypted Loader]]
+***** [[Preprocessor Lynx ROM|ROM]]
 **** Nintendo Entertainment System
 ***** [[Preprocessor iNES Header|iNES Header]]
 ***** [[Preprocessor NES CHR Banks|CHR Banks]]
