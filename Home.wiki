@@ -93,7 +93,7 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 *** Atari Lynx
 **** Lynx Code Library
 ***** [[lynx.h]]
-** Ricoh 2A03 (6502 without BCD)
+** Ricoh 2A03
 *** Nintendo Entertainment System__
 **** [[NES Programming FAQ and Important Pointers]]
 ***** [[NES Programming FAQ and Important Pointers|Introduction]]
