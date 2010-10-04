@@ -14,25 +14,25 @@ The keywords near and far can be used as well on target CPU's and/or platforms w
 type ( [near/far] [is/has/no/not] condition )
 }}}
 
-|=Conditions|
-|plus|
-|positive|
-|greater|
-|minus|
-|negative|
-|less|
-|overflow|
-|carry|
-|nonzero|
-|set|
-|true|
-|1|
-|equal|
-|zero|
-|false|
-|unset|
-|clear|
-|0|
+|=Conditions|=6502 Opcodes|
+|plus|BPL|
+|positive|BPL|
+|greater|BPL|
+|minus|BMI|
+|negative|BMI|
+|less|BMI|
+|overflow|BVC|
+|carry|BCS|
+|nonzero|BNE|
+|set|BNE|
+|true|BNE|
+|1|BNE|
+|equal|BEQ|
+|zero|BEQ|
+|false|BEQ|
+|unset|BNE|
+|clear|BNE|
+|0|BNE|
 
 ====Examples====
 {{{
@@ -57,7 +57,11 @@ if(set)
 }
 }}}
 
-It is important to remember that branches are usually taken on the opposite case of what you write in the code.  For instance, in the example above, the {{{lda scrollTo.flags}}}
+It is important to remember that branches are usually taken on the opposite case of what you write in the code.  For instance, in the example above, the {{{lda scrollTo.flags}}} line will set the zero flag to 1 if the value loaded was non-zero, otherwise the zero flag is 0.  The {{{if(set)}}} branch test means that we want the body of the if block to execute if the zero flag is 1, otherwise, jump to the end of the block if it is 0.
+
+The code that gets emitted on the 6502 is {{{bne LABEL}}}.  The {{{bne}}} opcode means to branch when the zero flag is 0.  The zero flag will be 1 if the value loaded was nonzero (i.e. the value was "set").
+
+The table of branch tests above lists the 6502 opcode used for each branch test.
 
 ==If Statements==
 
