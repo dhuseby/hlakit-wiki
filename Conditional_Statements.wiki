@@ -14,7 +14,6 @@ The keywords near and far can be used as well on target CPU's and/or platforms w
 type ( [near/far] [is/has/no/not] condition )
 }}}
 
-\\
 |=Conditions|
 |plus|
 |positive|
