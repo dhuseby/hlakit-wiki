@@ -57,6 +57,8 @@ if(set)
 }
 }}}
 
+It is important to remember that branches are usually taken on the opposite case of what you write in the code.  For instance, in the example above, the {{{lda scrollTo.flags}}}
+
 ==If Statements==
 
 Use an if statement to implement a conditional statement.
