@@ -188,7 +188,7 @@ interrupt main()
 
 ==Switch/Case Statements==
 
-Use the switch statement to pass control to a case which matches the result of register. If no case satisfies the condition, the default case is executed.
+Use the switch statement to pass control to a case which matches the result of register. If no case satisfies the condition, the default case is executed.  The default block is optional.  If no default block is specified, the default is to not execute any code and fall through to the code after the switch statement.
 
 ====The Syntax====
 {{{
