@@ -190,6 +190,8 @@ interrupt main()
 
 Use the switch statement to pass control to a case which matches the result of register. If no case satisfies the condition, the default case is executed.  The default block is optional.  If no default block is specified, the default is to not execute any code and fall through to the code after the switch statement.
 
+Note that there is no 'break' keyword like in C/C++.  Switch statements in HLAKit are shorthand for if..elif..else statements.  Case blocks do not fall through so this can't be used for things like Duff's Device.
+
 ====The Syntax====
 {{{
 #!c
