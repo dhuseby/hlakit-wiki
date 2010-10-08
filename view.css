@@ -5,7 +5,7 @@ li { list-style: none; }
 li li { list-style: circle; }
 .clear { clear: both; }
 .container { position: relative; margin: 0 auto; width: 580px; }
-.tools { background: #fff; border-bottom: 1px dashed #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: left; padding: 0 34px 11px 34px; }
+.tools { background: #fff; border-bottom: 1px dashed #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd; text-align: left; padding: 14px 34px 21px 34px; }
 .tools a { font-size: 10px; font-weight: bold; display: inline; text-decoration: none; color: #808080; margin-right: 10px; }
 .tools .icon { margin-top: 4px; }
 .tools .right { float: right; margin-right: 0px; margin-left: 10px; margin-top:5px; }
