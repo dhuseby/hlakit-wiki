@@ -34,8 +34,8 @@ The #rom.banksize keyword sets the default banksize to size. All banks will then
 
 If this keyword is not used, the default banksize (16K) is used.
 
-**#rom.bank banknumber[, maxsize]**
+**#rom.bank banknumber[, size]**
 
-The #rom.bank keyword sets the current bank of the ROM which will be written to. The first parameter, banknumber, specifies the bank number (see #rom.banksize). Optionally, you can specify the maximum size of the declared ROM bank with the second parameter, maxsize. This will prevent accidentally filling a bank with too much data.
+The #rom.bank keyword sets the current bank of the ROM which will be written to. The first parameter, banknumber, specifies the bank number. Optionally, you can specify the size of the declared ROM bank with the second parameter, size (see #rom.banksize). This will prevent accidentally filling a bank with too much data.
 
 The bank specifies the position in the ROM (PRG binary) file at which the data is written to. Multiple banks can have the same runtime offset, as they are swapped in and out of the 32K PRG memory space. That actual address is specified by #rom.org.
