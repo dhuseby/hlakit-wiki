@@ -12,11 +12,11 @@ To reflect that in HLAKit, the meanings of the #rom.* preprocessor defines have 
 
 **#rom.org segment address[, counter address][, maxsize]**
 
-This sets the Lynx ROM image segment address, counter address, and maxsize for the following data.  Note that the parameters are different than the original #rom.org defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM]]. This allows compiled code and/or data to be placed anywhere in the ROM image.  The maxsize value is used to check assumptions about the size of the compiled code and data, it does not affect the maxsize of the bank.
+This sets the Lynx ROM image segment address, counter address, and maxsize for the following data.  Note that the parameters are different than the original #rom.org defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM preprocessor declarations]]. This allows compiled code and/or data to be placed anywhere in the ROM image.  The maxsize value is used to check assumptions about the size of the compiled code and data, it does not affect the maxsize of the bank.
 
 **#rom.end**
 
-This keeps it's original meaning as defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM]].  It ends a previously started ROM data block.
+This keeps it's original meaning as defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM preprocessor declarations]].  It ends a previously started ROM data block.
 
 **#rom.banksize size**
 
