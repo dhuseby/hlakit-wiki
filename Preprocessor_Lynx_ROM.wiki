@@ -6,20 +6,22 @@ That creates an interesting situation for compilers since the compiled code and 
 
 So when writing games for the Atari Lynx, we use the regular #ram.* preprocessor directives to set the execution addressing details so that the compiler can calculate addresses and relative jumps correctly.
 
-As for the Lynx ROM cart addressing, we have several new ROM preprocessor directives, nearly identical to the basic ROM directives except that they do not affect the #ram.* directives and only affect where the compiled code/data is located in the finished ROM image.
+As for the Lynx ROM cart addressing, this is where it gets interesting.  Lynx ROMs can have up to 2 banks, with each bank being divided into up to 256 segments, each containing between 512 and 2048 bytes of data.  The terminology then is that we have a bank number (0 or 1), a segment address (0-255), and a counter address (0-2047, depends on banksize).  The reason we the counter address is called "counter" address is because the Lynx has an 11-bit counter chip that automatically increments after each write/read to/from the ROM cart.
 
-**#lynx.rom.bank banknumber**
+To reflect that in HLAKit, the meanings of the #rom.* preprocessor defines have changed a bit.
 
-This sets the ROM bank number.  Currently all Lynx carts can have two banks: 0, and 1.  The valid values are 0 or 1.
+**#rom.org segment address[, counter address][, maxsize]**
 
-**#lynx.rom.org segmentaddress[, address counter][, maxsize]**
+This sets the Lynx ROM image segment address, counter address, and maxsize for the following data.  Note that the parameters are different than the original #rom.org defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM]]. This allows compiled code and/or data to be placed anywhere in the ROM image.  The maxsize value is used to check assumptions about the size of the compiled code and data, it does not affect the maxsize of the bank.
 
-This sets the Lynx ROM image segment address, address counter, and maxsize for the following data.  This allows compiled code and/or data to be placed anywhere in the ROM image.  The maxsize value is used to check assumptions.
+**#rom.end**
 
-**#lynx.rom.padding value**
+This keeps it's original meaning as defined in [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM]].  It ends a previously started ROM data block.
 
-This sets the value to use when filling in empty space in a ROM image.
+**#rom.banksize size**
 
-**#lynx.rom.end**
+The Atari Lynx only has three valid bank sizes: 128K, 256K, and 512K.  If you do not specify a banksize, the default value is 512K.  You will receive a warning if there are multiple #rom.banksize declarations for the same bank.  The banksize affects the valid range of the counter address because the number of segments is fixed at 256, the smaller ROMs like the 128K ROM only uses 9-bits of the counter chip.  So if you declare your ROM to only have a banksize of 128K, the HLAKit compiler will automatically check for and limit each segment to only 512 bytes in size.
 
-This marks the end of a chunk of ROM data.  If you specify a maxsize value in the #lynx.rom.org directive, this lets the compiler know where the end is so that it can check to see if the chunk of ROM data is within the maxsize limit.
+**#rom.bank banknumber[, size]**
+
+This specifies which bank is currently being written to.  The Atari Lynx only has two possible banks: 0 and 1.  You can optionally set the size of the bank by specifying the size parameter.  It behaves exactly like the #rom.banksize described above.
