@@ -6,11 +6,15 @@ Preprocessor settings for specifying the block and bank size, as well as if the 
 
 **#lnx.page_size_bank0**
 
-This 
+The Lynx has two different registers by which you can read cart data.  If you read from $FCB2 then the CART0/ line on the cart bus will be used to strobe the read.  We call the memory accessed with the CART0/ strobe "bank 0".  This setting specifies how large each segment is.  Valid values are: 256, 512, 1K, and 2K.
 
 **#lnx.page_size_bank1**
 
+This specifies how large each segment is in "bank 1" of the Lynx cart.  Valid values are: 256, 512, 1K, and 2K.
+
 **#lnx.version**
+
+This specifies which version of the .lnx file format to use.  Currently all known Lynx ROMs are stored in version 1 .lnx files.  There is a proposal for a version 2 that is specified [http://www.classicgamedev.com/Lynx:LNXv2_File_Format here]
 
 **#lnx.cart_name**
 
