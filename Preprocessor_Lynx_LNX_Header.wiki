@@ -18,10 +18,15 @@ This specifies which version of the .lnx file format to use.  Currently all know
 
 **#lnx.cart_name**
 
+Every Lynx ROM has a name.  This is how you set it.  This is a string that can be up to 32 characters long.
+
 **#lnx.manufacturer_name**
+
+This is the name of the creator/manufacturer of the game (e.g. "Atari").  This is a string that can be up to 16 characters long.
 
 **#lns.rotation**
 
+This specifies if the game is to be played in rotated mode.  Games can have "none", "left", and "right" rotation.
 
 ==Misc==
 
