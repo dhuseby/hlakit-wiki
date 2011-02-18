@@ -1,0 +1,124 @@
+[[[
+===Declaring Functions===
+
+HLAKit supports the declaration of functions to help organize your code into manageable chunks.  This is part of what makes it a high level assembler.  Below is the syntax for declaring functions:
+
+====The Syntax====
+{{{
+#!c
+type [noreturn] label([parameter0, parameter1, ... (inline only)])
+{
+    // body
+}
+}}}
+]]]
+[[[
+===The Type of a Function===
+
+HLAKit functions can be declared with one of three types: function, inline, or interrupt.  Functions declared with **//function//** are standard subroutines that end with a "return from subroutine" instruction (e.g. RTS on 6502).  Functions declared with **//inline//** are macros that are compiled inline with the calling code and do not contain a return instruction. Functions declared with **//interrupt//** are subroutines that end in a "return from interrupt handler" instruction (e.g. RTI on 6502).
+]]]
+[[[
+===The "return" Keyword===
+
+With normal subroutine and interrupt functions, the generation of the return from subroutine/interrupt opcodes are automatic.  However, HLAKit also supports the **//return//** keyword that can be used to exit a function early or to explicitly define the return from subroutine/interrupt opcode.  Including the **//return//** keyword in your functions makes them a little cleaner but it is not required.  Also, because only subroutines and interrupt functions contain the return from subroutine/interrupt opcodes, using the **//return//** keyword in an **//inline//** macro generates an error.
+
+====A Subroutine with "return" Keyword====
+{{{
+#!c
+function foo()
+{
+    lda 0x0200,x
+    inx
+    ora 0x0200,x
+    if(zero) 
+    {
+        return
+    }
+    inx
+}
+}}}
+]]]
+[[[
+===The ##noreturn## Keyword===
+
+The **//noreturn//** keyword will instruct the compiler to not include the return from subroutine/interrupt opcode in subroutine/interrupt functions.  It can be used to save space when a function ends in a "JMP" or infinite loop, for example.
+
+====A ##noreturn## Subroutine====
+{{{
+#!c
+function noreturn do_game()
+{
+    forever
+    {
+        do_sound()
+        do_input()
+        do_graphics()
+        tick()
+    }
+}
+}}}
+]]]
+[[[
+===Parameters===
+
+Because HLAKit is an assembler and not a high level language such as C, subroutine and interrupt functions can not use parameters. Parameters can only be used on inline (macro) functions.
+
+HLAKit supports an unlimited amount of parameters, and they can be labeled anything using alphanumeric characters and underscores.
+
+====Example Macro with Parameters====
+{{{
+#!c
+inline assign(dest,value)
+{
+    lda value
+    sta dest
+}
+}}}
+]]]
+[[[
+===Interrupt Type Declaring===
+
+Interrupt functions can optionally be declared with a platform-specific subtype (e.g **//start//**, **//nmi//**, or **//irq//** for the Nintendo Entertainment System 6502). This does not automatically make them the function pointed to by the interrupt vector, but rather is used exclusively for error messages. If you define an interrupt as a certain type, then define it to a different interrupt vector, you will get an error. This is handy to prevent the accidental misuse of interrupts.
+
+====Example====
+{{{
+#!c
+// A start interrupt explicitly declared
+interrupt.start main()
+{
+    // initialize game
+    forever 
+    {
+        // do game  
+    }
+}
+
+// an NMI interrupt with no subtype declaration
+interrupt vblank()
+{
+    // do timing
+}
+}}}
+]]]
+[[[
+===Calling Functions===
+
+Functions can simply be called by their name as they are in high level languages. It will automatically use the correct jump opcode or insert the code (in the case of **//inline//** functions). Standard functions will have the "jump to subroutine" opcode (e.g. JSR on 6502), while interrupts will be called with the jump opcode (e.g. JMP on 6502). It addition, it will help prevent errors in your code, such as using a standard subroutine for an interrupt by mistake.
+
+====Example====
+{{{
+#!c
+// a sample macro
+inline assign(dest,value)
+{
+    lda value
+    sta dest
+}
+
+// normal function calling it
+function testFunction()
+{
+    assign( someVar, #12 )
+}
+}}}
+]]]
