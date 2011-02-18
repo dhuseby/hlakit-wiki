@@ -12,7 +12,7 @@ The 6502 CPU support three interrupt vectors that are store in the CPU RAM, in m
 The HLAKit 6502 preprocessor supports directives that assign different functions to the interrupts.  In the final binary, pointers to the function will be stored in the proper memory locations for the interrupts.
 ]]]
 [[[
-===Vector Declarations===
+===Vectors===
 
 **#interrupt.start function**
 
