@@ -21,6 +21,12 @@
 ** NES
 *** FAQ and Important Tips
 *** lib_ram.as
+*** nes.h
+*** nes_audio.h
+*** nes_io.h
+*** nes_mappers.h
+*** nes_system.h
+*** nes_video.h
 * CPU Libraries
 ** MOS 6502
 *** Code Library
