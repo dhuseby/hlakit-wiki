@@ -15,12 +15,12 @@
 * Integers and Math
 * Conditionals
 * NESHLA to HLAKit
-* Target Platforms
+* Platform Libraries
 ** Atari Lynx
 *** Code Library
 ** NES
 *** Code Library
-* Target CPUs
+* CPU Libraries
 ** MOS 6502
 *** Code Library
 * Future Features
