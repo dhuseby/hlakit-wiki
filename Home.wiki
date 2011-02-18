@@ -9,31 +9,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 [[[
 ===Contents===
 
-* Function Declaration and Use
-** [[Function Declaration and Use|Declaring Functions]]
-** [[Function Declaration and Use|return and noreturn]]
-** [[Function Declaration and Use|Parameters]]
-** [[Function Declaration and Use|Interrupt Type Declaring]]
-** [[Function Declaration and Use|Calling Functions]]
-
-* Integers and Arithmetic Operations
-** [[Integers and Arithmetic Operations|Integers]]
-** [[Integers and Arithmetic Operations|Arithmetic Operations]]
-*** [[Integers and Arithmetic Operations|Operators]]
-*** [[Integers and Arithmetic Operations|Keywords]]
-*** [[Integers and Arithmetic Operations|Examples]]
-
-* Conditional Statements
-** [[Conditional Statements|If Statements]]
-** [[Conditional Statements|While Statements]]
-** [[Conditional Statements|Do While Statements]]
-** [[Conditional Statements|Forever Statements]]
-** [[Conditional Statements|Switch Statements]]
-
-* [[Compiler Options]]
-
-* [[Differences Between HLAKit and NESHLA]]
-
 * Target Machines
 ** MOS 6502
 *** Apple II
