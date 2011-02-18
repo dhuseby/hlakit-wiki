@@ -29,6 +29,17 @@
 *** nes_video.h
 * CPU Libraries
 ** MOS 6502
-*** Code Library
+*** std.h
+*** std_assignment.h
+*** std_bitwise.h
+*** std_boolean.h
+*** std_init.as
+*** std_jumps.as
+*** std_math.as
+*** std_math.h
+*** std_memory.as
+*** std_memory.h
+*** std_palette.as
+*** std_stack.h
 * Future Features
 
