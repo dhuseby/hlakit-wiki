@@ -1,4 +1,4 @@
 [[[
 ===Introduction===
-There are preprocessor directives specific to certain Platforms/CPUs. [[Preprocessor/Target_Specific/MOS_6502 6502]]
+There are preprocessor directives specific to certain Platforms/CPUs. [[Target Specific/MOS 6502|6502]]
 ]]]
