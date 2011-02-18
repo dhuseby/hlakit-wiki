@@ -1,10 +1,10 @@
 Home
 FAQ
 Preprocessor
->Messages
->Files
->ROM and RAM
->Target Specific
+>/Messages
+>/Files
+>/ROM and RAM
+>/Target Specific
 Variables
 Functions
 Integers
