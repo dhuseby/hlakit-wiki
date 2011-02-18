@@ -130,7 +130,7 @@ while(set)
 }}}
 ]]]
 [[[
-===Do While Statements===
+===Do..While\\Statements===
 
 Use a do while statement to implement a conditional loop.
 
