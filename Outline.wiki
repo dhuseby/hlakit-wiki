@@ -11,9 +11,6 @@
 *** Ricoh 2A03
 **** NES
 * Variables
-** Types
-** Declarations
-** Initialization
 * Functions
 * Integers and Math
 * Conditionals
