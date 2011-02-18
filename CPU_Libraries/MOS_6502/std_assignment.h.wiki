@@ -21,7 +21,7 @@ inline assign(dest,value)
 }
 }}}
 
-==assign_x==
+**assign_x**
 
 dest[x] = value\\
 dest: memory location of 8 bit variable\\
@@ -36,7 +36,7 @@ inline assign_x(dest,value)
 }
 }}}
 
-==x_assign_x==
+**x_assign_x**
 
 dest[x] = src[x]\\
 dest: memory location of 8 bit variable\\
@@ -51,7 +51,7 @@ inline x_assign_x(dest,src)
 }
 }}}
 
-==x_assign_y==
+**x_assign_y**
 
 dest[y] = src[x]\\
 dest: memory location of 8 bit variable\\
@@ -66,7 +66,7 @@ inline x_assign_y(dest,src)
 }
 }}}
 
-==assign_y==
+**assign_y**
 
 dest[y] = value\\
 dest: memory location of 8 bit variable\\
@@ -81,7 +81,7 @@ inline assign_y(dest,value)
 }
 }}}
 
-==x_assign==
+**x_assign**
 
 dest[x] = value\\
 dest: memory location of 8 bit variable\\
