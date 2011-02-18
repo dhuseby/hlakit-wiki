@@ -9,48 +9,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 [[[
 ===Contents===
 
-* Target Machines
-** MOS 6502
-*** Apple II
-** MOS 6502C
-*** Atari 5200 SuperSystem
-*** Atari 7800 ProSystem
-** MOS 65SC02
-*** Atari Lynx
-**** Lynx Code Library
-***** [[lynx.h]]
-** Ricoh 2A03
-*** Nintendo Entertainment System__
-**** [[NES Programming FAQ and Important Pointers]]
-***** [[NES Programming FAQ and Important Pointers|Introduction]]
-***** [[NES Programming FAQ and Important Pointers|General PPU Registers]]
-***** [[NES Programming FAQ and Important Pointers|Name and Attribute Tables (the background graphics)]]
-***** [[NES Programming FAQ and Important Pointers|Scrolling]]
-**** NES Code Library
-***** [[lib_ram.as]]
-***** [[nes.h]] (Standard NES Functions, Macros and Defines)
-****** [[nes_audio.h]]
-****** [[nes_io.h]]
-****** [[nes_mappers.h]]
-****** [[nes_system.h]]
-****** [[nes_video.h]]
-** MOS 6507
-*** Atari 2600
-** WDC 65C816
-*** Apple IIgs
-** ARM7TDMI
-*** Nintendo Game Boy Advance
-** Motorola 68000
-*** Sega Genesis
-*** Sega Nomad
-*** Neo Geo AES
-** Sharp LR35902 Z80
-*** Nintendo Game Boy (Pocket)
-*** Nintendo Game Boy Color
-** Zilog Z80
-*** Sega Master System
-*** Sega Game Gear
-
 * Target CPU Code Libraries
 ** MOS 6502
 *** [[std.h]]
