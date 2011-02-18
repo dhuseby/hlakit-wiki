@@ -20,6 +20,7 @@
 *** lynx.h
 ** NES
 *** FAQ and Important Tips
+*** lib_ram.as
 * CPU Libraries
 ** MOS 6502
 *** Code Library
