@@ -1,0 +1,75 @@
+[[[
+===Integers===
+
+The HLAKit compiler supports a number of different types of immediate integer declarations. The types are as follows:
+
+|=Type|=Description|=Examples|
+|decimal|A normal number.|123, 1234, 128, 255|
+|kilo|The number preceding the "K" is multiplied by 1024. For example, 32K is 32768.|1K, 2K, 4K, 32K|
+|hex (C style)|Hexadecimal numbers in the "0x" C style.|0x0123, 0x1234, 0x80, 0xFF|
+|hex ($ style)|Hexadecimal numbers in the "$" ASM/Pascal style.|$0123, $1234, $80, $FF|
+|binary|Binary integers are preceded with a "%" character.|%10011010, %01001011|
+]]]
+[[[
+===Arithmatic Operations===
+
+The arithmatic operators and keywords perform integer arithmetic operations. They can be used with addresses, variable addresses, and anywhere else an immediate integer can be placed. Multiple operators and keywords can be used together, and parenthesis can be used to define precedence.  Below is a list of all supported operators in precedence order.
+]]]
+[[[
+=== Operators ===
+
+|=Operator|=Description|=Example|
+|+|Positive Sign|+A|
+|-|Negative Sign|-B|
+|!|Not|!A (results in 1 on true, 0 on false)|
+|~ |Binary Not|~ A (results in the inverted integer of A)|
+|*|Multiply|A * B|
+|/|Divide|A / B|
+|%|Modulo|A % B|
+|+|Add|A + B|
+|-|Subtract|A - B|
+|>>|Binary Shift Right|A >> B|
+|<<|Binary Shift Left|A << B|
+|>|Boolean Greater Than|A > B (results in 1 on true, 0 on false)|
+|<|Boolean Less Than|A < B (results in 1 on true, 0 on false)|
+|>=|Boolean Greater Than or Equal To|A >= B (results in 1 on true, 0 on false)|
+|<=|Boolean Less Than or Equal To|A <= B (results in 1 on true, 0 on false)|
+|!=|Boolean Not Equal To|A != B (results in 1 on true, 0 on false)|
+|~==|Boolean Equal To|A == B (results in 1 on true, 0 on false)|
+|&|Binary AND|A & B|
+|^|Binary Exclusive OR|A ^ B|
+|~||Binary OR|A ~| B|
+]]]
+[[[
+===Keywords===
+
+|=Operator|=Description|=Example|
+|lo|Low byte of word|lo(0x1234) (results in 0x34)\\This is the same as:\\(0x1234 & 0x00FF)|
+|hi|High byte of word|hi(0x1234) (results in 0x12)\\This is the same as:\\((0x1234 & 0xFF00) >> 8)|
+|nylo|Low nybble of a byte|nylo(0x12) (results in 0x02)\\This is the same as:\\(0x12 & 0x0F)|
+|nyhi|High nybble of a byte|nyhi(0x12) (results in 0x01)\\This is the same as:\\((0x12 & 0xF0) >> 4)|
+|sizeof|Size of Variable|sizeof(word) (results in 2)|
+
+====Examples====
+{{{
+#!c
+// array elements defined with arithmatic operations
+byte oamaddrs[] = {$00*4, $08*4, $10*4, $18*4}
+
+// code with an arithmatic sizeof keyword
+clc
+adc #sizeof(SPR_OBJ)
+
+// use of the lo and hi keywords on a macro param
+inline jsrind_imd(pproc)
+{
+    lda #lo(pproc)
+    ora #hi(pproc)
+    if(not zero) 
+    {
+        assign_16i(_jsrind_temp, pproc)
+        jsrind_f()
+    }
+}
+}}}
+]]]
