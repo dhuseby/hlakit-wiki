@@ -4,7 +4,7 @@
 The file preprocessor directives give the ability to split code and data up into multiple files and insert them into other files.
 ]]]
 [[[
-===Insertion and Use of Additional Files===
+===Includes===
 
 **#include "filename"**
 
