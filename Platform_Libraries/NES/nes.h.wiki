@@ -1,0 +1,5 @@
+[[[
+===About===
+
+The nes.h file includes all of the NES specific macros and functions including PPU, vblank, vram, sprites, palette, joystick, audio, and mappers functions.  The nes.h just includes [[nes_system.h]], [[nes_video.h]], [[nes_io.h]], [[nes_audio.h]], [[nes_mappers.h]].
+]]]
