@@ -1,0 +1,54 @@
+[[[
+===Introduction===
+
+The file preprocessor directives give the ability to split code and data up into multiple files and insert them into other files.
+]]]
+[[[
+===Includes===
+
+**#include "filename"**
+
+The #include directive inserts an addition file into the current source file. The compiler will parse the current source file up until the include directive, then parse the file "filename", then continue parsing the current source file. It reads the included file as text, the same as any other source file code file.
+
+====Examples====
+{{{
+#!c
+#include "nes.h"
+
+#include "additionalcode.as"
+}}}
+
+
+**#incbin "filename"**
+
+The #incbin directive inserts the specified binary file into the output binary at the current bank location. The data is like that which would be declared through a code array, but from an external file.
+
+On the NES, it is commonly used for the insertion of CHR data in the CHR ROM banks, as well as for name table data in PRG ROM banks.
+
+====Examples====
+{{{
+#!c
+#incbin "file.bin"
+
+#incbin "sprites.chr"
+
+sprite_pal:
+    #incbin "palettes\spr_pal0.pal"
+}}}
+
+
+**#usepath "pathname"**
+
+**//NOTE: this is deprecated as of version 0.0.2 which supports specifying include paths as command line arguments to the compiler, this feature will be completely removed in version 1.0.0 //**
+
+The #usepath directive adds the path "pathname" to the include and incbin search paths so you need no type entire paths to files to include them.
+
+====Examples====
+{{{
+#!c
+#usepath "C:\source\headers"
+
+// will search the standard paths, as well as C:\source\headers\file.as
+#include "file.as"
+}}}
+]]]
