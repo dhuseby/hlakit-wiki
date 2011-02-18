@@ -19,6 +19,7 @@
 ** Atari Lynx
 *** lynx.h
 ** NES
+*** FAQ and Important Tips
 * CPU Libraries
 ** MOS 6502
 *** Code Library
