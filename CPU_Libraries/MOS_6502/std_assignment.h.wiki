@@ -6,7 +6,7 @@ The std_assignment.h header file defines macros for 8 and 16 bit assignments tha
 [[[
 ===8-bit Assignments====
 
-==assign==
+**assign**
 
 dest = value\\
 dest: memory location of 8 bit variable\\
