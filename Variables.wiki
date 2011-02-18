@@ -151,3 +151,115 @@ struct player p
 stx p.anArray,2
 }}}
 ]]]
+[[[
+===Variable Declarations===
+
+The HLAKit language supports named variables to make coding easier.  Variables are defined as instances of a specific type and can be assigned to a specific memory location and an initial value.
+
+====The Syntax====
+{{{
+#!c
+// standard variables
+[shared] type label [: address ] [= value]
+
+// variable array with address and assignment
+[shared] type label[size] [: address] [= { values }]
+
+// variable array with implied size and assignment
+[shared] type label[] = 
+{ 
+    // values 
+}
+}}}
+
+Notice that when declaring an array variable that the size is optional if the variable declaration also includes an initial assignment.  The size can be calculated at compile time from the initial assignment.
+
+Array and struct variables are initialized with an assignment surrounded by braces.
+
+====Examples====
+{{{
+#!c
+byte counter         // simple variable declaration
+byte amount = 123    // variable with initial value
+pointer nametablePtr // pointer for the name table
+
+// define the struct time type
+struct time 
+{
+    byte ticks
+    byte seconds
+    byte minutes
+    byte hours
+}
+
+// a struct time variable with initialization
+struct time t = 
+{
+    0,   // 0 ticks
+    10,  // 10 seconds
+    1,   // 1 minute
+    3,   // 3 hours
+}
+
+typedef struct move_
+{
+    byte x, y
+} move
+
+// variable with type alias to struct move_
+move m = { 10, 10 }
+}}}
+
+Notice how struct variables are initialized with values surrounded by braces just like in C.
+]]]
+[[[
+===Variable Arrays===
+
+Variable arrays can be defined with a specific size value as a place holder, or have their elements explicitly defined. If the elements are explicitly defined, the size does not need to be specified.
+
+====Examples====
+{{{
+#!c
+// a time struct variable with initialization
+struct time t = 
+{
+    0,   // 0 ticks
+    10,  // 10 seconds
+    1,   // 1 minute
+    3,   // 3 hours
+}
+
+// array of time structs with explicit size
+struct time history[10]
+
+// shared array of time structs with address and implied size
+shared struct time stamps[] : 0x0200 =
+{
+    { 0, 0, 0, 1 },
+    { 1, 1, 2, 1 },
+    { 0, 10, 1, 3 }
+}
+}}}
+
+In the above example, the variable named ##stamps## is an array of time structs that will be located at 0x0200 in the current bank and will be initialized as an array with three time struct values.  The size of the array is does not have to be supplied because it can be calculated by the compiler.
+]]]
+[[[
+===Variable Initialization===
+
+Variable array initializations can contain labels that reference specific locations in the array.  This is useful for hand tailoring access to arrays.
+
+====Example====
+{{{
+#!c
+// ROM variable array declaration with defined elements
+byte player_tiles[] = 
+{
+    player_tiles_walk:
+    spr00: $01,$02, $03,$04, $05,$06,
+    spr01: $07,$08, $43,$44, $41,$42,
+    spr02: $11,$32, $54,$11, $42,$32
+}
+}}}
+
+By using one of the labels defined in the above example, you get direct access to the array member without having to do an indirect, indexed lookup.
+]]]
