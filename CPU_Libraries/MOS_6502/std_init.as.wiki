@@ -8,6 +8,7 @@ The std_init.as file provides functions handy for properly initializing the syst
 
 This function is used to clear the RAM upon startup.
 
+====Example====
 {{{
 #!c
 /* clears the 2K ram ($800 bytes)
