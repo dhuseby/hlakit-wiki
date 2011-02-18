@@ -17,9 +17,7 @@
 * NESHLA to HLAKit
 * Platform Libraries
 ** Atari Lynx
-*** Code Library
 ** NES
-*** Code Library
 * CPU Libraries
 ** MOS 6502
 *** Code Library
