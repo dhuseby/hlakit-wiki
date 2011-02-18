@@ -1,3 +1,0 @@
-=std.h=
-
-The std.h file defines 8 and 16 bit assignment, arithmatic, bitwise, and boolean support macros that are common for all 6502 processors.  The std.h file just contains includes for [[std_assignment.h]], [[std_bitwise.h]], [[std_math.h]], [[std_boolean.h]], [[std_stack.h]] and [[std_memory.h]].  See the pages for the other files to get detailed descriptions of each.
