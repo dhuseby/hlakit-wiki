@@ -1,4 +1,0 @@
-[[[
-===Introduction===
-There are preprocessor directives specific to certain Platforms/CPUs. [[Target Specific/MOS 6502|6502]]
-]]]
