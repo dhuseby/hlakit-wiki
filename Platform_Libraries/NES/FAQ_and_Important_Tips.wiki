@@ -1,0 +1,73 @@
+[[[
+===Introduction===
+
+The NES is a very low level system to program for. It has no DOS, no Windows, no OS at all. Everything is done with pure code and address register accesses. With the use of NESHLA and the NESHLA Code Library, programming the NES is incredibly easy. However, even with all of this and master programming skills, if you are new to low level console programming, you must read this document. The NES operates around precise timing. If you attempt to read or write VRAM at the wrong time, use video or audio registers at the wrong time, or push too much data to the stack, you will run into trouble.
+
+With the NES hardware I have built to run ROMs on an actual NES, I have found out just how much a document like this is needed! Emulators such as FCE Ultra and Nintendulator are very good and accurate, but NO emulator is perfect. Many ROMs and ROM hacks people make run on the emulators fine, but do not run properly, or at all on an actual NES. Here's the startling truth: I have run most of the homebrew ROMs from NESDEV on actual hardware, and next to none of them work properly like they do on an emulator, and of those, nearly all of their problems lie in the graphic rendering code. This document will help you write code to properly render NES graphics and avoid the common problems.
+]]]
+[[[
+===General PPU Registers===
+
+**//Why does my game have messed up graphics?//**\\
+**//Why does my game not scroll properly?//**
+
+The VRAM should only be written to if the background and sprites are turned off, during VBLANK, or in a few cases, HBLANK. Attempting to write to it outside of these times will cause erroneous results.
+
+On NTSC NES systems, the screen is refreshed at 60hz, sixty times per second. The NES draws the screen from top to bottom, then has some time at the bottom where it is not drawing, and when the light beam moves back up to the top to draw the next scanline. During this time when it is not drawing, we have what is called VBLANK. This gives us a significant open window to write to the VRAM, updating the screen. HBLANK, of course, is the small amount to time when the light beam moves from the end of a scanline to the start of the next one (right back to left). To use this properly, an IRQ timer is generally needed, which will be discussed later.
+
+If drawing a large amount to the screen, such as a large portion of the background (name table), or filling in a large amount of CHRRAM data, you must turn off drawing, disabling the background and sprites. The vblank only gives enough time to draw a couple columns of tiles. An attempt to do a large write to VRAM during vblank will overflow onto the non-vblank, in which the NES will be trying to draw the screen while you are writing to it. This will cause major problems.
+
+When writing a small amount of data to VRAM, such as a column or two of name table data, and a few sprites, you can do this during vblank. This is generally where you will do all your drawing, as you could not turn off the screen each update for scrolling games and such.
+]]]
+[[[
+===Name and Attribute Tables (the background graphics)===
+
+**//Why does <some NES game> have strange colours on the left or right column while scrolling?//**
+
+NES games are tile based games, which means they store the graphics as 8x8 pixel tiles. The name table in an array of tile indexes telling the NES which tile to draw where on the screen. The tiles themselves do not store their actual colours. Each tile can be drawn with any colours desired. The colours to draw the tiles are stored as another array, this one an attribute table telling the NES what colour to draw each tile on the screen. However, with the exception of a few games which use additional cartridge hardware such as the MMC5 chip, the NES background colours are set in 16x16 pixel blocks. That means that each block of four tiles use the same colours.
+
+When the game is scrolling a name table, it will often come to a point where it's drawing a new column of 8x8 tiles, in which case, if it sets the palette attributes for these, it will affect the next column of tiles with the new colours. The tiles wrap around by the way, so writing tiles for the rightmost column could affect the leftmost.
+
+Older televisions had borders surrounding the image on the screen (usually that common round border). This of course cuts off part of the image. Because of this, the edge colours weren't a big deal until recently with new televisions which show the entire screen.
+
+As well, emulators generally show the entire screen, which is why you will often see status bars and such a fair bit from the top and bottom. This is due as well to the fact that the NES has a 240 pixel high screen area, but on most NTSC televisions, only about 224 pixels were shown.
+]]]
+[[[
+===Scrolling===
+
+**//Setting The Scroll Register//**
+
+One can manually scroll by tiles (8x8) pixels by modifying the VRAM address with register $2006. However, the way to properly and smoothly scroll, is to use register $2005, the BG.SCROLL register. This sets up the scrolling.
+
+The catch is that you can not set the VRAM address after setting the scroll. So, though it is always good practice to clear the VRAM address (vram_clear_address()) after a number of PPU operations to ensure clean graphics, this is not one of them.
+
+This is the correct code:
+
+{{{
+#!c
+vram_set_scroll(scrollx,scrolly)
+}}}
+
+
+This would work as well:
+
+{{{
+#!c
+vram_clear_address()
+vram_set_scroll(scrollx,scrolly)
+}}}
+
+This would cause the vertical scroll to be nonexistent:
+
+{{{
+#!c
+vram_set_scroll(scrollx,scrolly)
+vram_clear_address()
+}}}
+
+The scroll value MUST be written to the scroll register after every time you have accessed VRAM, including reading/writing CHR RAM, name tables, attribute tables, sprites, and setting the address pointer.
+
+The best place to set the scroll register is at the end of your vblank.
+
+Note that if you are a coder who likes to be safe and clears the VRAM address commonly and randomly throughout your code, you MUST set the scroll register on EVERY vblank for it to scroll. clearing the VRAM address counts as accessing VRAM.
+]]]
