@@ -78,7 +78,7 @@ player me // struct player variable
 Normally, if you do not typedef a ##struct## type you have to declare variables using the full ##struct foo## type.  In the example above, the type ##struct player_## has been aliased as ##player## using ##typedef##.  From that point on, you can declare new variables using just ##player## instead of ##struct player_##.
 ]]]
 [[[
-===The ##struct## Keyword===
+===The ##struct##\\Keyword===
 
 The ##struct## keyword is used to create new types that are structured containers of named members.  Structs can contain any number of members of any valid type, including other structs.
 
