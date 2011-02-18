@@ -157,7 +157,7 @@ inline vblank_wait()
 }}}
 ]]]
 [[[
-===Forever Statements===
+===Forever\\Statements===
 
 Use a forever statement to implement an infinite loop.
 
