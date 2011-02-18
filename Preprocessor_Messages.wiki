@@ -1,8 +1,13 @@
-=Messages=
+Home
+Preprocessor
+~
+[[[
+===Introduction===
 
 HLAKit gives you the ability to manually set compiler messages, as well as get additional information about the current location in the code.
-
-==Compiler Messages==
+]]]
+[[[
+===Compiler Messages===
 
 **#todo ["message"]**
 
@@ -65,8 +70,9 @@ This directive, for example, be used within Conditional Define blocks to prevent
 // a fatal error with a message string
 #fatal "This is a fatal error message"
 }}}
-
-==Tell Messages==
+]]]
+[[[
+===Tell Messages===
 
 **#tell.bank**
 
@@ -117,3 +123,4 @@ The #tell.banktype directive will display a compiler message with the current fi
 #!c
 #tell.banktype
 }}}
+]]]
