@@ -9,53 +9,6 @@ Why do this?  An HLA language gives a nice balance between structured programmin
 [[[
 ===Contents===
 
-* [[FAQ]]
-
-* The Preprocessor
-** [[Preprocessor Defines|Defines]]
-** [[Preprocessor Messages|Messages]]
-** [[Preprocessor Files|Files]]
-** [[Preprocessor ROM and RAM Banks and Blocks|ROM and RAM]]
-** [[Preprocessor Padding|Padding]]
-** Target Specific
-*** MOS 6502
-**** Generic (Common to all 6502 machines)
-***** [[Preprocessor 6502 Interrupt Vectors|Interrupt Vectors]]
-**** Apple II
-*** MOS 6502C
-**** Atari 5200 SuperSystem
-**** Atari 7800 ProSystem
-*** MOS 65SC02
-**** Atari Lynx
-***** [[Preprocessor Lynx LNX Header|.lnx Header]]
-***** [[Preprocessor Lynx Encrypted Loader|Encrypted Loader]]
-***** [[Preprocessor Lynx ROM|ROM]]
-*** Ricoh 2A03
-**** Nintendo Entertainment System
-***** [[Preprocessor iNES Header|iNES Header]]
-***** [[Preprocessor NES CHR Banks|CHR Banks]]
-*** MOS 6507
-**** Atari 2600
-*** WDC 65C816
-**** Apple IIgs
-*** ARM7TDMI
-**** Nintendo Game Boy Advance
-*** Motorola 68000
-**** Sega Genesis
-**** Sega Nomad
-**** Neo Geo AES
-*** Sharp LR35902 Z80
-**** Nintendo Game Boy (Pocket)
-**** Nintendo Game Boy Color
-*** Zilog Z80
-**** Sega Master System
-**** Sega Game Gear
-
-* Variable Declaration and Use
-** [[Variable Types|Types]]
-** [[Variable Declarations|Declarations]]
-** [[Variable Manipulators|Manipulators]]
-
 * Function Declaration and Use
 ** [[Function Declaration and Use|Declaring Functions]]
 ** [[Function Declaration and Use|return and noreturn]]
