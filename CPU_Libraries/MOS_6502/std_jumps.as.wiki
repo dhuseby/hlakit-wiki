@@ -3,7 +3,8 @@
 
 This file provides functions that implement indirect subroutine calling support that doesn't rely on manual stack manipulation.
 ]]]
-==jsrind_f==
+[[[
+===jsrind_f===
 
 {{{
 #!c
@@ -12,8 +13,9 @@ function noreturn jsrind_f()
     jmp [_jsrind_temp]
 }
 }}}
-
-==jsrind==
+]]]
+[[[
+===jsrind===
 
 {{{
 #!c
@@ -27,8 +29,9 @@ inline jsrind(pproc)
     }
 }
 }}}
-
-==jsrind_x==
+]]]
+[[[
+===jsrind_x===
 
 {{{
 #!c
@@ -42,8 +45,9 @@ inline jsrind_x(pproc)
     }
 }
 }}}
-
-==jsrind_y==
+]]]
+[[[
+===jsrind_y===
 
 {{{
 #!c
@@ -57,8 +61,9 @@ inline jsrind_y(pproc)
     }
 }
 }}}
-
-==jsrind_imd==
+]]]
+[[[
+===jsrind_imd===
 
 {{{
 #!c
@@ -72,8 +77,9 @@ inline jsrind_imd(pproc)
     }
 }
 }}}
-
-==jsr_table==
+]]]
+[[[
+===jsr_table===
 
 {{{
 #!c
@@ -85,8 +91,9 @@ inline jsr_table(ptable)
     jsrind_f()
 }
 }}}
-
-==jsr_table_xy==
+]]]
+[[[
+===jsr_table_xy===
 
 {{{
 #!c
@@ -97,3 +104,4 @@ inline jsr_table_xy(ptable)
     jsrind_f()
 }
 }}}
+]]]
