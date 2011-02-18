@@ -2,7 +2,7 @@
 ===Introduction===
 
 The std_assignment.h header file defines macros for 8 and 16 bit assignments that are common for all 6502 architectures.
-
+]]]
 [[[
 ===8-bit Assignments====
 
