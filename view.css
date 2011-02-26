@@ -29,6 +29,10 @@ a:active {
   color: rgb(37, 64, 113);
 }
 
+p {
+	text-align: justify;
+}
+
 #tools {
 	-webkit-box-align: stretch;
 	-webkit-padding-start: 667px;
