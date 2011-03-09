@@ -17,11 +17,12 @@
 		<div id="mainview-content">
 			<div id="browserPage" class="page hidden">
 				<div>
-					<a id="delete" class="header-link" href="${uri}/delete">Delete</a>
-					<a id="history" class="header-link" href="${uri}/history">History</a>
-					<a id="edit" class="header-link" href="${uri}/edit">Edit</a>
-					<h1>${title}</h1>
+					${commands}
+					<ul class="breadcrumbs">
+						${breadcrumbs}
+					</ul>
 				</div>
+				<div style="clear: both;"></div>
 				${content}
 			</div>
 		</div>
