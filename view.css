@@ -41,6 +41,10 @@ ul ul {
 	padding-left: 1.3em;
 }
 
+a > img {
+	border: 0;
+}
+
 #tools {
 	padding-left: 667px;
 	margin: 0;
