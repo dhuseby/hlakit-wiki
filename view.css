@@ -37,6 +37,10 @@ ul {
 	padding-left: 0px;
 }
 
+ul ul {
+	padding-left: 1.3em;
+}
+
 #tools {
 	padding-left: 667px;
 	margin: 0;
